@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
+		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
+		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
+		935F8A071EF4492000623EA7 /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A001EF4492000623EA7 /* UIView+Layer.swift */; };
+		935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A011EF4492000623EA7 /* UIView+Layout.swift */; };
+		935F8A091EF4492000623EA7 /* UIViewController+Parenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */; };
+		935F8A0A1EF4492000623EA7 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A031EF4492000623EA7 /* UIViewStyle.swift */; };
+		935F8A0C1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */; };
 		93E6C4881EF4471B00CDC040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E6C4871EF4471B00CDC040 /* AppDelegate.swift */; };
 		93E6C48A1EF4471B00CDC040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E6C4891EF4471B00CDC040 /* ViewController.swift */; };
 		93E6C48D1EF4471B00CDC040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C48B1EF4471B00CDC040 /* Main.storyboard */; };
@@ -15,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
+		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
+		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
+		935F8A001EF4492000623EA7 /* UIView+Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layer.swift"; sourceTree = "<group>"; };
+		935F8A011EF4492000623EA7 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Parenting.swift"; sourceTree = "<group>"; };
+		935F8A031EF4492000623EA7 /* UIViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
+		935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFontDescriptor+Accessible.swift"; sourceTree = "<group>"; };
 		93E6C4841EF4471B00CDC040 /* CirculateSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirculateSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E6C4871EF4471B00CDC040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93E6C4891EF4471B00CDC040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +51,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		935F89FC1EF4490700623EA7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				935F89FD1EF4492000623EA7 /* TapButton.swift */,
+				935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */,
+				935F89FF1EF4492000623EA7 /* UIFont+App.swift */,
+				935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */,
+				935F8A001EF4492000623EA7 /* UIView+Layer.swift */,
+				935F8A011EF4492000623EA7 /* UIView+Layout.swift */,
+				935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */,
+				935F8A031EF4492000623EA7 /* UIViewStyle.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		93E6C47B1EF4471B00CDC040 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +85,7 @@
 		93E6C4861EF4471B00CDC040 /* CirculateSwift */ = {
 			isa = PBXGroup;
 			children = (
+				935F89FC1EF4490700623EA7 /* Library */,
 				93E6C4871EF4471B00CDC040 /* AppDelegate.swift */,
 				93E6C4891EF4471B00CDC040 /* ViewController.swift */,
 				93E6C48B1EF4471B00CDC040 /* Main.storyboard */,
@@ -137,7 +169,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935F8A0A1EF4492000623EA7 /* UIViewStyle.swift in Sources */,
 				93E6C48A1EF4471B00CDC040 /* ViewController.swift in Sources */,
+				935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */,
+				935F8A0C1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift in Sources */,
+				935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */,
+				935F8A041EF4492000623EA7 /* TapButton.swift in Sources */,
+				935F8A071EF4492000623EA7 /* UIView+Layer.swift in Sources */,
+				935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */,
+				935F8A091EF4492000623EA7 /* UIViewController+Parenting.swift in Sources */,
 				93E6C4881EF4471B00CDC040 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +344,7 @@
 				93E6C4981EF4471B00CDC040 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
