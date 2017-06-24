@@ -43,7 +43,7 @@ extension UIFont {
     
     class func appFont(isFixed: Bool = false, size: CGFloat, textStyle: UIFontTextStyle = .body, weight: AppFontWeight) -> UIFont {
         guard !isFixed else { return systemFont(ofSize: size, weight: weight.uiFontWeight()) }
-        return preferredSystemFont(size: size, weight: weight.uiFontWeight())
+        return preferredSystemFont(size: size, textStyle: textStyle, weight: weight.uiFontWeight())
     }
     
     private class func preferredSystemFont(size: CGFloat, textStyle: UIFontTextStyle = .body, weight: CGFloat) -> UIFont {

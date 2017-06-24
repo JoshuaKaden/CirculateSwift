@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5993F1EFF041400E58B0A /* DiagramViewController.swift */; };
 		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
 		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
 		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77C5993F1EFF041400E58B0A /* DiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
 		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
 		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
@@ -51,7 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		935F89FC1EF4490700623EA7 /* Library */ = {
+		77C599411EFF061A00E58B0A /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				93E6C4871EF4471B00CDC040 /* AppDelegate.swift */,
+				77C5993F1EFF041400E58B0A /* DiagramViewController.swift */,
+				93E6C4891EF4471B00CDC040 /* ViewController.swift */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		935F89FC1EF4490700623EA7 /* Code Library */ = {
 			isa = PBXGroup;
 			children = (
 				935F89FD1EF4492000623EA7 /* TapButton.swift */,
@@ -63,7 +75,7 @@
 				935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */,
 				935F8A031EF4492000623EA7 /* UIViewStyle.swift */,
 			);
-			name = Library;
+			name = "Code Library";
 			sourceTree = "<group>";
 		};
 		93E6C47B1EF4471B00CDC040 = {
@@ -85,13 +97,12 @@
 		93E6C4861EF4471B00CDC040 /* CirculateSwift */ = {
 			isa = PBXGroup;
 			children = (
-				935F89FC1EF4490700623EA7 /* Library */,
-				93E6C4871EF4471B00CDC040 /* AppDelegate.swift */,
-				93E6C4891EF4471B00CDC040 /* ViewController.swift */,
-				93E6C48B1EF4471B00CDC040 /* Main.storyboard */,
 				93E6C48E1EF4471B00CDC040 /* Assets.xcassets */,
-				93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */,
+				77C599411EFF061A00E58B0A /* Code */,
+				935F89FC1EF4490700623EA7 /* Code Library */,
 				93E6C4931EF4471B00CDC040 /* Info.plist */,
+				93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */,
+				93E6C48B1EF4471B00CDC040 /* Main.storyboard */,
 			);
 			path = CirculateSwift;
 			sourceTree = "<group>";
@@ -128,7 +139,7 @@
 				TargetAttributes = {
 					93E6C4831EF4471B00CDC040 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = FP6GFC3W94;
+						DevelopmentTeam = NF2C9YRD83;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -179,6 +190,7 @@
 				935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */,
 				935F8A091EF4492000623EA7 /* UIViewController+Parenting.swift in Sources */,
 				93E6C4881EF4471B00CDC040 /* AppDelegate.swift in Sources */,
+				77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FP6GFC3W94;
+				DEVELOPMENT_TEAM = NF2C9YRD83;
 				INFOPLIST_FILE = CirculateSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chadford.com.CirculateSwift;
@@ -316,7 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FP6GFC3W94;
+				DEVELOPMENT_TEAM = NF2C9YRD83;
 				INFOPLIST_FILE = CirculateSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chadford.com.CirculateSwift;
