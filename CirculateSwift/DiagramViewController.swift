@@ -10,6 +10,7 @@ import UIKit
 
 final class DiagramViewController: UIViewController {
     
+    let containerView = UIView()
     let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
     
     override func viewDidLoad() {
@@ -20,23 +21,47 @@ final class DiagramViewController: UIViewController {
         rowViews.forEach {
             view in
             view.backgroundColor = UIColor.red
-            self.view.addSubview(view)
+            self.containerView.addSubview(view)
         }
+        
+        view.addSubview(containerView)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let rowSize = CGSize(width: view.width / 2, height: view.height / 14)
-        let paddingSize = CGSize(width: rowSize.width / 5, height: rowSize.height / 2)
+        layoutRowViews()
         
+    }
+    
+    private func layoutRowViews() {
+        let rowSize = CGSize(width: view.width / 2, height: view.height / 15)
+        let paddingSize = CGSize(width: rowSize.width / 5, height: rowSize.height / 1.7)
+        
+        var lastMaxY = CGFloat(0)
         for index in 0...7 {
             let view = rowViews[index]
             view.size = rowSize
-            let paddingOffset = paddingSize.height * (CGFloat(index) + 1)
-            let rowOffset = rowSize.height * CGFloat(index)
-            view.y = paddingOffset + rowOffset
-            view.centerHorizontallyInSuperview()
+            
+            view.y = lastMaxY
+            switch index {
+            case 2, 5:
+                // room for top and bottom connections
+                view.y += paddingSize.height
+            case 3, 4:
+                // room for top or bottom connections
+                view.y += paddingSize.height * 0.5
+            default:
+                // no op
+                break
+            }
+            
+            lastMaxY = view.maxY + paddingSize.height
         }
+        
+        guard let lastRowView = rowViews.last else { return }
+        containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
+        
+        containerView.centerInSuperview()
     }
 }
