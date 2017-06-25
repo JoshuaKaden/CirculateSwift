@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5993F1EFF041400E58B0A /* DiagramViewController.swift */; };
+		77C599431F00813B00E58B0A /* UIColor+Inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599421F00813B00E58B0A /* UIColor+Inits.swift */; };
 		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
 		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
 		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		77C5993F1EFF041400E58B0A /* DiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
+		77C599421F00813B00E58B0A /* UIColor+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Inits.swift"; sourceTree = "<group>"; };
 		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
 		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				935F89FD1EF4492000623EA7 /* TapButton.swift */,
 				935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */,
+				77C599421F00813B00E58B0A /* UIColor+Inits.swift */,
 				935F89FF1EF4492000623EA7 /* UIFont+App.swift */,
 				935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */,
 				935F8A001EF4492000623EA7 /* UIView+Layer.swift */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				935F8A0A1EF4492000623EA7 /* UIViewStyle.swift in Sources */,
+				77C599431F00813B00E58B0A /* UIColor+Inits.swift in Sources */,
 				93E6C48A1EF4471B00CDC040 /* ViewController.swift in Sources */,
 				935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */,
 				935F8A0C1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift in Sources */,
