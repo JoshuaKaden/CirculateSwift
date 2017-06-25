@@ -10,7 +10,7 @@ import UIKit
 
 final class DiagramViewController: UIViewController {
     
-    let rowViews: [UIView] = Array(repeatElement(UIView(), count: 8))
+    let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,16 @@ final class DiagramViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let rowSize = CGSize(width: view.width / 3, height: view.height / 14)
+        let rowSize = CGSize(width: view.width / 2, height: view.height / 14)
         let paddingSize = CGSize(width: rowSize.width / 5, height: rowSize.height / 2)
         
-        for index in 0...8 {
-            
+        for index in 0...7 {
+            let view = rowViews[index]
+            view.size = rowSize
+            let paddingOffset = paddingSize.height * (CGFloat(index) + 1)
+            let rowOffset = rowSize.height * CGFloat(index)
+            view.y = paddingOffset + rowOffset
+            view.centerHorizontallyInSuperview()
         }
     }
 }

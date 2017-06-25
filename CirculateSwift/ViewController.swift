@@ -16,6 +16,6 @@ final class ViewController: UIViewController {
     
     private func showDiagramViewController() {
         let vc = DiagramViewController()
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
