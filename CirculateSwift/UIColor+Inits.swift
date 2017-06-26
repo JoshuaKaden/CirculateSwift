@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    convenience init(easyRed: Int, easyGreen: Int, easyBlue: Int, alpha: Double) {
+    convenience init(easyRed: Int, easyGreen: Int, easyBlue: Int, alpha: Double = 1) {
         self.init(red: CGFloat(easyRed)/CGFloat(255), green: CGFloat(easyGreen)/CGFloat(255), blue: CGFloat(easyBlue)/CGFloat(255), alpha: CGFloat(alpha))
     }
     
