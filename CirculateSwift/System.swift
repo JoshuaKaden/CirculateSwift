@@ -45,6 +45,27 @@ enum System: CustomStringConvertible {
         return NSLocalizedString(string, comment: "")
     }
     
+    var systemRow: SystemRow {
+        switch self {
+        case .gut, .liver:
+            return .liverGut
+        case .head:
+            return .head
+        case .heart:
+            return .heart
+        case .leftArm, .rightArm:
+            return .arms
+        case .leftKidney, .rightKidney:
+            return .kidneys
+        case .leftLeg, .rightLeg:
+            return .legs
+        case .leftLung, .rightLung:
+            return .lungs
+        case .lowerBody:
+            return .lowerBody
+        }
+    }
+    
     var title: String {
         let string: String
         switch self {

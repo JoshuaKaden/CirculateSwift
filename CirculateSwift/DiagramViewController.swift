@@ -12,6 +12,14 @@ final class DiagramViewController: UIViewController {
     
     let containerView = UIView()
     let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
+    let systemViewControllers: [SystemViewController] = [
+        SystemViewController(viewModel: SystemViewModel(system: .head)),
+        SystemViewController(viewModel: SystemViewModel(system: .leftArm))
+    ]
+    
+    deinit {
+        systemViewControllers.forEach { $0.leaveParentViewController() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,12 @@ final class DiagramViewController: UIViewController {
         }
         
         view.addSubview(containerView)
+        
+        systemViewControllers.forEach {
+            vc in
+            let targetView = self.rowViews[vc.viewModel.system.systemRow.rawValue]
+            self.adoptChildViewController(vc, targetView: targetView)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,6 +46,16 @@ final class DiagramViewController: UIViewController {
         
         layoutRowViews()
         
+        systemViewControllers.forEach {
+            vc in
+            let systemRow = vc.viewModel.system.systemRow
+            let rowView = self.rowViews[systemRow.rawValue]
+            if systemRow.isTwin {
+                vc.view.size = CGSize(width: rowView.width / 2, height: rowView.height)
+            } else {
+                vc.view.size = rowView.size
+            }
+        }
     }
     
     private func layoutRowViews() {
@@ -40,17 +64,15 @@ final class DiagramViewController: UIViewController {
         
         var lastMaxY = CGFloat(0)
         for index in 0...7 {
+            let systemRow = SystemRow(rawValue: index)!
             let view = rowViews[index]
             view.size = rowSize
             
             view.y = lastMaxY
-            switch index {
-            case 2, 5:
+            switch systemRow {
+            case .lungs, .kidneys:
                 // room for top and bottom connections
                 view.y += paddingSize.height
-            case 3, 4:
-                // room for top or bottom connections
-                view.y += paddingSize.height * 0.5
             default:
                 // no op
                 break
