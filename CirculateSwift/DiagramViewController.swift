@@ -10,12 +10,25 @@ import UIKit
 
 final class DiagramViewController: UIViewController {
     
-    let containerView = UIView()
-    let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
-    let systemViewControllers: [SystemViewController] = [
-        SystemViewController(viewModel: SystemViewModel(system: .head)),
-        SystemViewController(viewModel: SystemViewModel(system: .leftArm))
+    private let containerView = UIView()
+    private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
+    private let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
+    private let systemViewControllers: [SystemViewController] = [
+        SystemViewController(viewModel: SystemViewModel(system: System.gut)),
+        SystemViewController(viewModel: SystemViewModel(system: System.head)),
+        SystemViewController(viewModel: SystemViewModel(system: System.heart)),
+        SystemViewController(viewModel: SystemViewModel(system: System.leftArm)),
+        SystemViewController(viewModel: SystemViewModel(system: System.leftKidney)),
+        SystemViewController(viewModel: SystemViewModel(system: System.leftLeg)),
+        SystemViewController(viewModel: SystemViewModel(system: System.leftLung)),
+        SystemViewController(viewModel: SystemViewModel(system: System.liver)),
+        SystemViewController(viewModel: SystemViewModel(system: System.lowerBody)),
+        SystemViewController(viewModel: SystemViewModel(system: System.rightArm)),
+        SystemViewController(viewModel: SystemViewModel(system: System.rightKidney)),
+        SystemViewController(viewModel: SystemViewModel(system: System.rightLeg)),
+        SystemViewController(viewModel: SystemViewModel(system: System.rightLung))
     ]
+    private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
     deinit {
         systemViewControllers.forEach { $0.leaveParentViewController() }
@@ -48,10 +61,18 @@ final class DiagramViewController: UIViewController {
         
         systemViewControllers.forEach {
             vc in
-            let systemRow = vc.viewModel.system.systemRow
+            let system = vc.viewModel.system
+            let systemRow = system.systemRow
             let rowView = self.rowViews[systemRow.rawValue]
             if systemRow.isTwin {
-                vc.view.size = CGSize(width: rowView.width / 2, height: rowView.height)
+                vc.view.size = CGSize(width: twinWidth, height: rowView.height)
+                switch system {
+                case .gut, .rightArm, .rightKidney, .rightLeg, .rightLung:
+                    vc.view.x = rowView.width - twinWidth
+                default:
+                    // no op
+                    break
+                }
             } else {
                 vc.view.size = rowView.size
             }
@@ -59,7 +80,6 @@ final class DiagramViewController: UIViewController {
     }
     
     private func layoutRowViews() {
-        let rowSize = CGSize(width: view.width / 2, height: view.height / 15)
         let paddingSize = CGSize(width: rowSize.width / 5, height: rowSize.height / 1.7)
         
         var lastMaxY = CGFloat(0)
