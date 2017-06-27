@@ -41,7 +41,6 @@ final class DiagramViewController: UIViewController {
         
         rowViews.forEach {
             view in
-            view.backgroundColor = UIColor.red
             self.containerView.addSubview(view)
         }
         

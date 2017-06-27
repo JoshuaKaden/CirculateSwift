@@ -9,6 +9,7 @@
 import UIKit
 
 final class SystemViewController: UIViewController {
+    let titleLabel = UILabel()
     let viewModel: SystemViewModel
     
     init(viewModel: SystemViewModel) {
@@ -23,5 +24,21 @@ final class SystemViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = SystemView(viewModel: viewModel)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        titleLabel.font = UIFont.appFont(size: 8, weight: .regular)
+        titleLabel.text = viewModel.system.title
+        view.addSubview(titleLabel)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        titleLabel.sizeToFit()
+        titleLabel.x = 4
+        titleLabel.y = 4
+        view.bringSubview(toFront: titleLabel)
     }
 }
