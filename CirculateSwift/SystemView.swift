@@ -9,6 +9,7 @@
 import UIKit
 
 final class SystemView: UIView {
+    private var sublayer: CAShapeLayer?
     private let viewModel: SystemViewModel
     
     init(viewModel: SystemViewModel) {
@@ -21,6 +22,8 @@ final class SystemView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        self.sublayer?.removeFromSuperlayer()
+        
         let path = UIBezierPath(rect: bounds)
         path.lineWidth = 1.0
         
@@ -30,5 +33,6 @@ final class SystemView: UIView {
         sublayer.fillColor = viewModel.fillColor.cgColor
         
         layer.addSublayer(sublayer)
+        self.sublayer = sublayer
     }
 }
