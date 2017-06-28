@@ -15,6 +15,7 @@
 		77C5994B1F013CB900E58B0A /* SystemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5994A1F013CB900E58B0A /* SystemViewModel.swift */; };
 		77C5994D1F013D3300E58B0A /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5994C1F013D3300E58B0A /* SystemViewController.swift */; };
 		77C5994F1F013D5700E58B0A /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5994E1F013D5700E58B0A /* SystemView.swift */; };
+		77C599511F03D71500E58B0A /* HeartAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599501F03D71500E58B0A /* HeartAnimator.swift */; };
 		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
 		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
 		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
@@ -39,6 +40,7 @@
 		77C5994A1F013CB900E58B0A /* SystemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewModel.swift; sourceTree = "<group>"; };
 		77C5994C1F013D3300E58B0A /* SystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
 		77C5994E1F013D5700E58B0A /* SystemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
+		77C599501F03D71500E58B0A /* HeartAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartAnimator.swift; sourceTree = "<group>"; };
 		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
 		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				77C5993F1EFF041400E58B0A /* DiagramViewController.swift */,
+				77C599501F03D71500E58B0A /* HeartAnimator.swift */,
 				77C599461F00860D00E58B0A /* System.swift */,
 				77C599481F0139BD00E58B0A /* SystemRow.swift */,
 				77C5994E1F013D5700E58B0A /* SystemView.swift */,
@@ -214,6 +217,7 @@
 				935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */,
 				935F8A041EF4492000623EA7 /* TapButton.swift in Sources */,
 				77C599471F00860D00E58B0A /* System.swift in Sources */,
+				77C599511F03D71500E58B0A /* HeartAnimator.swift in Sources */,
 				935F8A071EF4492000623EA7 /* UIView+Layer.swift in Sources */,
 				935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */,
 				935F8A091EF4492000623EA7 /* UIViewController+Parenting.swift in Sources */,

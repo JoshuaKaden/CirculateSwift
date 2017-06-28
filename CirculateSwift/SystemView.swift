@@ -9,7 +9,7 @@
 import UIKit
 
 final class SystemView: UIView {
-    private var sublayer: CAShapeLayer?
+    private var drawingLayer: CAShapeLayer?
     private let viewModel: SystemViewModel
     
     init(viewModel: SystemViewModel) {
@@ -22,10 +22,15 @@ final class SystemView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        self.sublayer?.removeFromSuperlayer()
+        self.drawingLayer?.removeFromSuperlayer()
         
         let path = UIBezierPath(rect: bounds)
         path.lineWidth = 1.0
+        
+        if viewModel.system == .heart {
+            path.move(to: CGPoint(x: width / 2, y: 0))
+            path.addLine(to: CGPoint(x: width / 2, y: height))
+        }
         
         let sublayer = CAShapeLayer()
         sublayer.path = path.cgPath
@@ -33,6 +38,6 @@ final class SystemView: UIView {
         sublayer.fillColor = viewModel.fillColor.cgColor
         
         layer.addSublayer(sublayer)
-        self.sublayer = sublayer
+        self.drawingLayer = sublayer
     }
 }

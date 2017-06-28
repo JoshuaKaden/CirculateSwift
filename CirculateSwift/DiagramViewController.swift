@@ -11,6 +11,8 @@ import UIKit
 final class DiagramViewController: UIViewController {
     
     private let containerView = UIView()
+    private var heartAnimator: HeartAnimator { return HeartAnimator(view: heartViewController.view) }
+    private var heartViewController: SystemViewController { return systemViewControllers[2] }
     private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
     private let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
     private let systemViewControllers: [SystemViewController] = [
