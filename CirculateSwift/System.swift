@@ -90,39 +90,4 @@ enum System: CustomStringConvertible {
         }
         return NSLocalizedString(string, comment: "")
     }
-    
-    /*
- JSKSystemHeart,
- JSKSystemPulmonaryArtery,
- JSKSystemLeftLung,
- JSKSystemRightLung,
- JSKSystemPulmonaryVein,
- JSKSystemAorta,
- JSKSystemCarotidArteries,
- JSKSystemHead,
- JSKSystemJugularVeins,
- JSKSystemSuperiorVenaCava,
- JSKSystemSubclavianArteries,
- JSKSystemRightArm,
- JSKSystemLeftArm,
- JSKSystemSubclavianVeins,
- JSKSystemCeliacArtery,
- JSKSystemGut,
- JSKSystemHepaticPortalVein,
- JSKSystemHepaticArtery,
- JSKSystemLiver,
- JSKSystemHepaticVeins,
- JSKSystemInferiorVenaCava,
- JSKSystemRenalArteries,
- JSKSystemRightKidney,
- JSKSystemLeftKidney,
- JSKSystemRenalVeins,
- JSKSystemGonadalArteries,
- JSKSystemLowerBody,
- JSKSystemGonadalVeins,
- JSKSystemIliacArtieries,
- JSKSystemRightLeg,
- JSKSystemLeftLeg,
- JSKSystemIliacVeins,
-*/
 }

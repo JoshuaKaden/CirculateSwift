@@ -55,12 +55,7 @@ final class DiagramViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeOrientation(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
-    
-    func delay(_ delay: Double, closure: @escaping () -> Void) {
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
-    }
-    
+        
     func didChangeOrientation(_ sender: Notification) {
         systemViewControllers.forEach {
             $0.view.setNeedsDisplay()
