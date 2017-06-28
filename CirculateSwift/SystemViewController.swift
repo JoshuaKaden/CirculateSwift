@@ -12,6 +12,11 @@ final class SystemViewController: UIViewController {
     let titleLabel = UILabel()
     let viewModel: SystemViewModel
     
+    init(system: System) {
+        viewModel = SystemViewModel(system: system)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     init(viewModel: SystemViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -31,6 +36,7 @@ final class SystemViewController: UIViewController {
         
         titleLabel.font = UIFont.appFont(size: 8, weight: .regular)
         titleLabel.text = viewModel.system.title
+        titleLabel.textColor = .white
         view.addSubview(titleLabel)
     }
     

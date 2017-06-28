@@ -14,19 +14,19 @@ final class DiagramViewController: UIViewController {
     private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
     private let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
     private let systemViewControllers: [SystemViewController] = [
-        SystemViewController(viewModel: SystemViewModel(system: System.gut)),
-        SystemViewController(viewModel: SystemViewModel(system: System.head)),
-        SystemViewController(viewModel: SystemViewModel(system: System.heart)),
-        SystemViewController(viewModel: SystemViewModel(system: System.leftArm)),
-        SystemViewController(viewModel: SystemViewModel(system: System.leftKidney)),
-        SystemViewController(viewModel: SystemViewModel(system: System.leftLeg)),
-        SystemViewController(viewModel: SystemViewModel(system: System.leftLung)),
-        SystemViewController(viewModel: SystemViewModel(system: System.liver)),
-        SystemViewController(viewModel: SystemViewModel(system: System.lowerBody)),
-        SystemViewController(viewModel: SystemViewModel(system: System.rightArm)),
-        SystemViewController(viewModel: SystemViewModel(system: System.rightKidney)),
-        SystemViewController(viewModel: SystemViewModel(system: System.rightLeg)),
-        SystemViewController(viewModel: SystemViewModel(system: System.rightLung))
+        SystemViewController(system: .gut),
+        SystemViewController(system: .head),
+        SystemViewController(system: .heart),
+        SystemViewController(system: .leftArm),
+        SystemViewController(system: .leftKidney),
+        SystemViewController(system: .leftLeg),
+        SystemViewController(system: .leftLung),
+        SystemViewController(system: .liver),
+        SystemViewController(system: .lowerBody),
+        SystemViewController(system: .rightArm),
+        SystemViewController(system: .rightKidney),
+        SystemViewController(system: .rightLeg),
+        SystemViewController(system: .rightLung)
     ]
     private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
