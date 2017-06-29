@@ -9,53 +9,48 @@
 import UIKit
 
 final class HeartAnimator {
+    
     private var floorLayer: CALayer?
-    private let view: UIView
     
-    init(view: UIView) {
-        self.view = view
-    }
-    
-    func start() {
-        /*
- CGFloat t_duration = kAnimationDuration;
- 
- // Heart
- // Pulse animation.
- CABasicAnimation *t_pulseAnimation1 = ({
- CABasicAnimation *t_animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
- t_animation.fromValue = [NSNumber numberWithFloat:0.0f];
- t_animation.toValue = [NSNumber numberWithFloat:1.0f];
- t_animation.fillMode = kCAFillModeBackwards;
- t_animation;
- });
- 
- CABasicAnimation *t_pulseAnimation2 = ({
- CABasicAnimation *t_animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
- t_animation.fromValue = [NSNumber numberWithFloat:1.0f];
- t_animation.toValue = [NSNumber numberWithFloat:0.0f];
- t_animation;
- });
- 
- CAAnimationGroup *t_group = [CAAnimationGroup animation];
- t_group.repeatCount = HUGE_VALF;
- //t_group.delegate = self;
- t_group.duration = t_duration;
- t_group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
- t_group.animations = @[t_pulseAnimation1, t_pulseAnimation2];
- 
- CAShapeLayer *t_layer = [self layerForSystem:JSKSystemHeart];
- UIColor *t_strokeColor = [UIColor clearColor];
- UIColor *t_fillColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.4];
- t_layer.strokeColor = t_strokeColor.CGColor;
- t_layer.fillColor = t_fillColor.CGColor;
- t_layer.opacity = 0.0;
- [t_layer addAnimation:t_group forKey:@"pulse"];
- [_floorLayer addSublayer:t_layer];
-*/
+    func start(view: SystemView) {
+        stop()
+        
+        let floorLayer = CALayer()
+        floorLayer.frame = view.bounds
+        view.layer.addSublayer(floorLayer)
+        self.floorLayer = floorLayer
+        
+        let duration = 2.0
+        
+        let pulse1 = CABasicAnimation(keyPath: "opacity")
+        pulse1.fromValue = 0
+        pulse1.toValue = 1
+        pulse1.fillMode = kCAFillModeBackwards
+        
+        let pulse2 = CABasicAnimation(keyPath: "opacity")
+        pulse2.fromValue = 1
+        pulse2.toValue = 0
+        
+        let group = CAAnimationGroup()
+        group.repeatCount = HUGE
+        group.duration = duration
+        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        group.animations = [pulse1, pulse2]
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = view.buildPath().cgPath
+        shapeLayer.frame = floorLayer.bounds
+        shapeLayer.fillColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.4).cgColor
+        shapeLayer.strokeColor = UIColor.clear.cgColor
+        shapeLayer.opacity = 0
+        shapeLayer.add(group, forKey: "pulse")
+        
+        floorLayer.addSublayer(shapeLayer)
     }
     
     func stop() {
-        
+        floorLayer?.removeAllAnimations()
+        floorLayer?.removeFromSuperlayer()
+        floorLayer = nil
     }
 }

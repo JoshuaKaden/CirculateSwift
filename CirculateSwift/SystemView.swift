@@ -24,13 +24,7 @@ final class SystemView: UIView {
     override func draw(_ rect: CGRect) {
         self.drawingLayer?.removeFromSuperlayer()
         
-        let path = UIBezierPath(rect: bounds)
-        path.lineWidth = 1.0
-        
-        if viewModel.system == .heart {
-            path.move(to: CGPoint(x: width / 2, y: 0))
-            path.addLine(to: CGPoint(x: width / 2, y: height))
-        }
+        let path = buildPath()
         
         let sublayer = CAShapeLayer()
         sublayer.path = path.cgPath
@@ -39,5 +33,17 @@ final class SystemView: UIView {
         
         layer.addSublayer(sublayer)
         self.drawingLayer = sublayer
+    }
+    
+    func buildPath() -> UIBezierPath {
+        let path = UIBezierPath(rect: bounds)
+        path.lineWidth = 1.0
+        
+        if viewModel.system == .heart {
+            path.move(to: CGPoint(x: width / 2, y: 0))
+            path.addLine(to: CGPoint(x: width / 2, y: height))
+        }
+        
+        return path
     }
 }
