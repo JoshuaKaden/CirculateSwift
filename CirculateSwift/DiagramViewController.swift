@@ -67,6 +67,11 @@ final class DiagramViewController: UIViewController {
         systemViewControllers.forEach {
             $0.view.setNeedsDisplay()
         }
+        
+        if isAnimating {
+            stopHeartAnimation()
+            startHeartAnimation()
+        }
     }
     
     override func viewDidLayoutSubviews() {
