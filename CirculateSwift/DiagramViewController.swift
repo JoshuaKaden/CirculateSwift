@@ -11,6 +11,9 @@ import UIKit
 final class DiagramViewController: UIViewController {
     
     private let containerView = UIView()
+    private let heartAnimator = HeartAnimator()
+    private var heartViewController: SystemViewController { return systemViewControllers[2] }
+    fileprivate var isAnimating = false
     private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
     private let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
     private let systemViewControllers: [SystemViewController] = [
@@ -28,6 +31,7 @@ final class DiagramViewController: UIViewController {
         SystemViewController(system: .rightLeg),
         SystemViewController(system: .rightLung)
     ]
+    private let touchscreen = TouchableView()
     private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
     deinit {
@@ -53,25 +57,35 @@ final class DiagramViewController: UIViewController {
             self.adoptChildViewController(vc, targetView: targetView)
         }
         
+        touchscreen.delegate = self
+        view.addSubview(touchscreen)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeOrientation(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
-        
+    
     func didChangeOrientation(_ sender: Notification) {
         systemViewControllers.forEach {
             $0.view.setNeedsDisplay()
+        }
+        
+        if isAnimating {
+            stopHeartAnimation()
+            startHeartAnimation()
         }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        touchscreen.frame = view.bounds
+        
         layoutRowViews()
         
         systemViewControllers.forEach {
             vc in
+            let rowView = self.rowView(systemVC: vc)
             let system = vc.viewModel.system
-            let systemRow = system.systemRow
-            let rowView = self.rowViews[systemRow.rawValue]
+            let systemRow = vc.viewModel.system.systemRow
             if systemRow.isTwin {
                 vc.view.size = CGSize(width: twinWidth, height: rowView.height)
                 switch system {
@@ -113,5 +127,34 @@ final class DiagramViewController: UIViewController {
         containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
         
         containerView.centerInSuperview()
+    }
+    
+    private func rowView(systemVC: SystemViewController) -> UIView {
+        let system = systemVC.viewModel.system
+        let systemRow = system.systemRow
+        return rowViews[systemRow.rawValue]
+    }
+    
+    fileprivate func startHeartAnimation() {
+        let heartView = heartViewController.view as! SystemView
+        heartAnimator.start(view: heartView)
+        isAnimating = true
+    }
+    
+    fileprivate func stopHeartAnimation() {
+        heartAnimator.stop()
+        isAnimating = false
+    }
+}
+
+// MARK: - TouchableViewDelegate
+
+extension DiagramViewController: TouchableViewDelegate {
+    func didTouch(touchableView: TouchableView) {
+        if isAnimating {
+            stopHeartAnimation()
+        } else {
+            startHeartAnimation()
+        }
     }
 }
