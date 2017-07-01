@@ -33,9 +33,6 @@ final class SystemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .clear
-        
         titleLabel.font = UIFont.appFont(size: 8, weight: .regular)
         titleLabel.text = viewModel.system.title
         titleLabel.textColor = .white

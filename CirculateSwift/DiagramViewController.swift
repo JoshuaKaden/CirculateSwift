@@ -61,7 +61,7 @@ final class DiagramViewController: UIViewController {
         arterialViewControllers.forEach {
             vc in
             vc.dataSource = self
-            self.adoptChildViewController(vc, targetView: self.containerView)
+            self.adoptChildViewController(vc)
         }
         
         touchscreen.delegate = self
@@ -114,7 +114,7 @@ final class DiagramViewController: UIViewController {
             }
         }
         
-        arterialViewControllers.forEach { $0.view.frame = self.containerView.bounds }
+        arterialViewControllers.forEach { $0.view.frame = self.view.bounds }
     }
     
     private func layoutRowViews() {
@@ -138,9 +138,7 @@ final class DiagramViewController: UIViewController {
         }
         
         guard let lastRowView = rowViews.last else { return }
-        containerView.size = CGSize(width: rowSize.width + (paddingSize.width * 2), height: lastRowView.maxY)
-        
-        rowViews.forEach { $0.centerHorizontallyInSuperview() }
+        containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
         
         containerView.centerInSuperview()
     }
@@ -179,7 +177,7 @@ final class DiagramViewController: UIViewController {
 extension DiagramViewController: ArteryViewControllerDataSource {
     func findRect(system: System) -> CGRect {
         let systemVC = findSystemVC(system: system)
-        return containerView.convert(systemVC.view.frame, from: systemVC.view)
+        return view.convert(systemVC.view.frame, from: systemVC.view)
     }
 }
 

@@ -15,7 +15,6 @@ protocol ArteryViewDataSource: class {
 
 final class ArteryView: UIView {
     weak var dataSource: ArteryViewDataSource?
-    private var drawingLayer: CAShapeLayer?
     let viewModel: ArteryViewModel
     
     init(viewModel: ArteryViewModel) {
@@ -28,17 +27,11 @@ final class ArteryView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        self.drawingLayer?.removeFromSuperlayer()
-        
         let path = buildPath()
-        
-        let sublayer = CAShapeLayer()
-        sublayer.path = path.cgPath
-        sublayer.strokeColor = viewModel.borderColor.cgColor
-        sublayer.fillColor = viewModel.fillColor.cgColor
-        
-        layer.addSublayer(sublayer)
-        self.drawingLayer = sublayer
+        viewModel.borderColor.setStroke()
+        viewModel.fillColor.setFill()
+        path.fill()
+        path.stroke()
     }
     
     func buildPath() -> UIBezierPath {
@@ -46,6 +39,8 @@ final class ArteryView: UIView {
         guard let dataSource = dataSource else { return path }
         
         let paddingSize = dataSource.paddingSize
+
+        path.lineJoinStyle = .round
         path.lineWidth = 3.0
         
         if let systemOrigin = viewModel.systemOrigin {
@@ -71,10 +66,13 @@ final class ArteryView: UIView {
                 path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
             case .right:
                 path.move(to: CGPoint(x: frame.origin.x + frame.width, y: frame.origin.y + (frame.height / 2)))
+                path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
             case .rightBottom:
                 path.move(to: CGPoint(x: frame.origin.x + frame.width, y: frame.origin.y + frame.height))
+                path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
             case .rightTop:
                 path.move(to: CGPoint(x: frame.origin.x + frame.width, y: frame.origin.y))
+                path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
             case .top:
                 path.move(to: CGPoint(x: frame.origin.x + (frame.width / 2), y: frame.origin.y))
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - paddingSize.height / 2))
@@ -87,7 +85,9 @@ final class ArteryView: UIView {
             }
         }
         
-        
+        if let systemTermini = viewModel.systemTermini {
+            
+        }
         
         return path
     }
