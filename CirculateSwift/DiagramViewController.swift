@@ -10,10 +10,14 @@ import UIKit
 
 final class DiagramViewController: UIViewController {
     
-    private let containerView = UIView()
+    private let arterialViewControllers: [ArteryViewController] = [
+        ArteryViewController(artery: .pulmonary)
+    ]
+    fileprivate let containerView = UIView()
     private let heartAnimator = HeartAnimator()
     private var heartViewController: SystemViewController { return systemViewControllers[2] }
     fileprivate var isAnimating = false
+    internal var paddingSize: CGSize { return CGSize(width: rowSize.width / 5, height: rowSize.height / 1.7) }
     private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
     private let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
     private let systemViewControllers: [SystemViewController] = [
@@ -34,10 +38,7 @@ final class DiagramViewController: UIViewController {
     private let touchscreen = TouchableView()
     private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
-    deinit {
-        systemViewControllers.forEach { $0.leaveParentViewController() }
-        NotificationCenter.default.removeObserver(self)
-    }
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +58,23 @@ final class DiagramViewController: UIViewController {
             self.adoptChildViewController(vc, targetView: targetView)
         }
         
+        arterialViewControllers.forEach {
+            vc in
+            vc.dataSource = self
+            self.adoptChildViewController(vc, targetView: self.containerView)
+        }
+        
         touchscreen.delegate = self
         view.addSubview(touchscreen)
         
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeOrientation(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
+    deinit {
+        systemViewControllers.forEach { $0.leaveParentViewController() }
+        NotificationCenter.default.removeObserver(self)
+    }
+
     func didChangeOrientation(_ sender: Notification) {
         systemViewControllers.forEach {
             $0.view.setNeedsDisplay()
@@ -74,6 +86,8 @@ final class DiagramViewController: UIViewController {
         }
     }
     
+    // MARK: - Layout
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -83,7 +97,7 @@ final class DiagramViewController: UIViewController {
         
         systemViewControllers.forEach {
             vc in
-            let rowView = self.rowView(systemVC: vc)
+            let rowView = self.findRowView(systemVC: vc)
             let system = vc.viewModel.system
             let systemRow = vc.viewModel.system.systemRow
             if systemRow.isTwin {
@@ -99,11 +113,11 @@ final class DiagramViewController: UIViewController {
                 vc.view.size = rowView.size
             }
         }
+        
+        arterialViewControllers.forEach { $0.view.frame = self.containerView.bounds }
     }
     
     private func layoutRowViews() {
-        let paddingSize = CGSize(width: rowSize.width / 5, height: rowSize.height / 1.7)
-        
         var lastMaxY = CGFloat(0)
         for index in 0...7 {
             let systemRow = SystemRow(rawValue: index)!
@@ -124,15 +138,28 @@ final class DiagramViewController: UIViewController {
         }
         
         guard let lastRowView = rowViews.last else { return }
-        containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
+        containerView.size = CGSize(width: rowSize.width + (paddingSize.width * 2), height: lastRowView.maxY)
+        
+        rowViews.forEach { $0.centerHorizontallyInSuperview() }
         
         containerView.centerInSuperview()
     }
     
-    private func rowView(systemVC: SystemViewController) -> UIView {
-        let system = systemVC.viewModel.system
+    // MARK: - Private
+    
+    fileprivate func findRowView(system: System) -> UIView {
         let systemRow = system.systemRow
         return rowViews[systemRow.rawValue]
+    }
+    
+    private func findRowView(systemVC: SystemViewController) -> UIView {
+        return findRowView(system: systemVC.viewModel.system)
+    }
+    
+    fileprivate func findSystemVC(system: System) -> SystemViewController {
+        return systemViewControllers
+            .filter { $0.viewModel.system == system }
+            .first!
     }
     
     fileprivate func startHeartAnimation() {
@@ -144,6 +171,15 @@ final class DiagramViewController: UIViewController {
     fileprivate func stopHeartAnimation() {
         heartAnimator.stop()
         isAnimating = false
+    }
+}
+
+// MARK: - ArteryViewControllerDataSource
+
+extension DiagramViewController: ArteryViewControllerDataSource {
+    func findRect(system: System) -> CGRect {
+        let systemVC = findSystemVC(system: system)
+        return containerView.convert(systemVC.view.frame, from: systemVC.view)
     }
 }
 

@@ -10,6 +10,6 @@ import UIKit
 
 struct SystemViewModel {
     let system: System
-    let borderColor = UIColor.systemWallColor
-    let fillColor = UIColor.systemFillColor
+    let borderColor = UIColor.systemWall
+    let fillColor = UIColor.systemFill
 }
