@@ -13,7 +13,7 @@ final class DiagramViewController: UIViewController {
     private let arterialViewControllers: [ArteryViewController] = [
         ArteryViewController(artery: .pulmonary)
     ]
-    fileprivate let containerView = UIView()
+    private let containerView = UIView()
     private let heartAnimator = HeartAnimator()
     private var heartViewController: SystemViewController { return systemViewControllers[2] }
     fileprivate var isAnimating = false
