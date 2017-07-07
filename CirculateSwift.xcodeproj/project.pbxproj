@@ -21,9 +21,10 @@
 		77C599571F067D3F00E58B0A /* Vein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599561F067D3F00E58B0A /* Vein.swift */; };
 		77C599591F06B05500E58B0A /* ArteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599581F06B05500E58B0A /* ArteryViewController.swift */; };
 		77C5995B1F06B06600E58B0A /* ArteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995A1F06B06600E58B0A /* ArteryView.swift */; };
-		77C5995D1F06B13600E58B0A /* ArteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995C1F06B13600E58B0A /* ArteryViewModel.swift */; };
+		77C5995D1F06B13600E58B0A /* ArteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995C1F06B13600E58B0A /* ArteryModel.swift */; };
 		77C5995F1F06B38F00E58B0A /* ConnectionLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */; };
 		77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599601F06B43800E58B0A /* SystemConnection.swift */; };
+		77C599651F100DF200E58B0A /* ArteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599641F100DF200E58B0A /* ArteryViewModel.swift */; };
 		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
 		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
 		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
@@ -54,9 +55,10 @@
 		77C599561F067D3F00E58B0A /* Vein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vein.swift; sourceTree = "<group>"; };
 		77C599581F06B05500E58B0A /* ArteryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewController.swift; sourceTree = "<group>"; };
 		77C5995A1F06B06600E58B0A /* ArteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryView.swift; sourceTree = "<group>"; };
-		77C5995C1F06B13600E58B0A /* ArteryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewModel.swift; sourceTree = "<group>"; };
+		77C5995C1F06B13600E58B0A /* ArteryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryModel.swift; sourceTree = "<group>"; };
 		77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionLocale.swift; sourceTree = "<group>"; };
 		77C599601F06B43800E58B0A /* SystemConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemConnection.swift; sourceTree = "<group>"; };
+		77C599641F100DF200E58B0A /* ArteryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewModel.swift; sourceTree = "<group>"; };
 		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
 		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
@@ -89,9 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				77C599541F067BA400E58B0A /* Artery.swift */,
+				77C5995C1F06B13600E58B0A /* ArteryModel.swift */,
 				77C5995A1F06B06600E58B0A /* ArteryView.swift */,
 				77C599581F06B05500E58B0A /* ArteryViewController.swift */,
-				77C5995C1F06B13600E58B0A /* ArteryViewModel.swift */,
+				77C599641F100DF200E58B0A /* ArteryViewModel.swift */,
 				77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */,
 				77C5993F1EFF041400E58B0A /* DiagramViewController.swift */,
 				77C599501F03D71500E58B0A /* HeartAnimator.swift */,
@@ -242,9 +245,10 @@
 				935F8A0C1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift in Sources */,
 				935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */,
 				77C599571F067D3F00E58B0A /* Vein.swift in Sources */,
+				77C599651F100DF200E58B0A /* ArteryViewModel.swift in Sources */,
 				935F8A041EF4492000623EA7 /* TapButton.swift in Sources */,
 				77C599591F06B05500E58B0A /* ArteryViewController.swift in Sources */,
-				77C5995D1F06B13600E58B0A /* ArteryViewModel.swift in Sources */,
+				77C5995D1F06B13600E58B0A /* ArteryModel.swift in Sources */,
 				77C599471F00860D00E58B0A /* System.swift in Sources */,
 				77C599511F03D71500E58B0A /* HeartAnimator.swift in Sources */,
 				77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */,
