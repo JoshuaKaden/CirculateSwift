@@ -112,15 +112,20 @@ final class ArteryView: UIView {
             
             path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + delta))
             
+            var branchPoint: CGPoint? = nil
+            
             switch firstTerminus.locale {
             case .bottom:
                 path.addLine(to: CGPoint(x: frame.midX, y: path.currentPoint.y))
+                branchPoint = path.currentPoint
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.maxY))
             case .bottomLeft:
                 path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
+                branchPoint = path.currentPoint
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.maxY))
             case .bottomRight:
                 path.addLine(to: CGPoint(x: frame.maxX, y: path.currentPoint.y))
+                branchPoint = path.currentPoint
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.maxY))
             case .left, .leftBottom, .leftTop:
                 path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
@@ -128,13 +133,46 @@ final class ArteryView: UIView {
                 path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
             case .top:
                 path.addLine(to: CGPoint(x: frame.midX, y: path.currentPoint.y))
+                branchPoint = path.currentPoint
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.origin.y))
             case .topLeft:
                 path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
+                branchPoint = path.currentPoint
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.origin.y))
             case .topRight:
                 path.addLine(to: CGPoint(x: frame.maxX, y: path.currentPoint.y))
+                branchPoint = path.currentPoint
                 path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.origin.y))
+            }
+            
+            if systemTermini.count == 2, let branchPoint = branchPoint {
+                let frame = dataSource.findRect(system: systemTermini[1].system)
+                path.move(to: branchPoint)
+                
+                switch systemTermini[1].locale {
+                case .bottom:
+                    path.addLine(to: CGPoint(x: frame.midX, y: path.currentPoint.y))
+                    path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.maxY))
+                case .bottomLeft:
+                    path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
+                    path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.maxY))
+                case .bottomRight:
+                    path.addLine(to: CGPoint(x: frame.maxX, y: path.currentPoint.y))
+                    path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.maxY))
+                case .left, .leftBottom, .leftTop:
+                    path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
+                case .right, .rightBottom, .rightTop:
+                    path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
+                case .top:
+                    path.addLine(to: CGPoint(x: frame.midX, y: path.currentPoint.y))
+                    path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.origin.y))
+                case .topLeft:
+                    path.addLine(to: CGPoint(x: frame.origin.x, y: path.currentPoint.y))
+                    path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.origin.y))
+                case .topRight:
+                    path.addLine(to: CGPoint(x: frame.maxX, y: path.currentPoint.y))
+                    path.addLine(to: CGPoint(x: path.currentPoint.x, y: frame.origin.y))
+                }
             }
         }
         
