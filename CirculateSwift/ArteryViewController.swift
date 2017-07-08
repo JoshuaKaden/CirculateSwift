@@ -62,6 +62,11 @@ final class ArteryViewController: UIViewController {
 }
 
 extension ArteryViewController: ArteryViewDataSource {
+    var aortaX: CGFloat {
+        let heartFrame = findRect(system: .heart)
+        return heartFrame.maxX + paddingSize.width
+    }
+    
     var paddingSize: CGSize {
         guard let paddingSize = dataSource?.paddingSize else { return CGSize.zero }
         if model.artery == .pulmonary {

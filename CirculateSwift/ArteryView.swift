@@ -9,6 +9,7 @@
 import UIKit
 
 protocol ArteryViewDataSource: class {
+    var aortaX: CGFloat { get }
     var paddingSize: CGSize { get }
     func findRect(system: System) -> CGRect
 }
@@ -112,7 +113,7 @@ final class ArteryView: UIView {
         if let _ = viewModel.originSystem {
             path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + delta))
         } else {
-            path.move(to: CGPoint(x: tFrame.maxX + paddingSize.width, y: targetY))
+            path.move(to: CGPoint(x: dataSource.aortaX, y: targetY))
         }
         
         // Do not connect the aorta directly to the terminus system.

@@ -41,13 +41,38 @@ struct ArteryModel {
             return [
                 SystemConnection(locale: .rightBottom, system: .head)
             ]
+        case .celiac:
+            return [
+                SystemConnection(locale: .topRight, system: .gut)
+            ]
+        case .gonadal:
+            return [
+                SystemConnection(locale: .rightTop, system: .lowerBody)
+            ]
+        case .hepatic:
+            return [
+                SystemConnection(locale: .topRight, system: .liver)
+            ]
+        case .iliac:
+            return [
+                SystemConnection(locale: .topRight, system: .leftLeg),
+                SystemConnection(locale: .topRight, system: .rightLeg)
+            ]
         case .pulmonary:
             return [
                 SystemConnection(locale: .topLeft, system: .leftLung),
                 SystemConnection(locale: .topLeft, system: .rightLung)
             ]
-        default:
-            return nil
+        case .renal:
+            return [
+                SystemConnection(locale: .topRight, system: .leftKidney),
+                SystemConnection(locale: .topRight, system: .rightKidney)
+            ]
+        case .subclavian:
+            return [
+                SystemConnection(locale: .topRight, system: .leftArm),
+                SystemConnection(locale: .topRight, system: .rightArm)
+            ]
         }
     }
 }
