@@ -13,36 +13,34 @@ enum System: CustomStringConvertible {
     case gut, head, heart, leftArm, leftKidney, leftLeg, leftLung, liver, lowerBody, rightArm, rightKidney, rightLeg, rightLung
     
     var description: String {
-        let string: String
         switch self {
         case .gut:
-            string = "Gut"
+            return NSLocalizedString("Gut", comment: "")
         case .head:
-            string = "Head"
+            return NSLocalizedString("Head", comment: "")
         case .heart:
-            string = "Heart"
+            return NSLocalizedString("Heart", comment: "")
         case .leftArm:
-            string = "Left Arm"
+            return NSLocalizedString("Left Arm", comment: "")
         case .leftKidney:
-            string = "Left Kidney"
+            return NSLocalizedString("Left Kidney", comment: "")
         case .leftLeg:
-            string = "Left Leg"
+            return NSLocalizedString("Left Leg", comment: "")
         case .leftLung:
-            string = "Left Lung"
+            return NSLocalizedString("Left Lung", comment: "")
         case .liver:
-            string = "Liver"
+            return NSLocalizedString("Liver", comment: "")
         case .lowerBody:
-            string = "Lower Body"
+            return NSLocalizedString("Lower Body", comment: "")
         case .rightArm:
-            string = "Right Arm"
+            return NSLocalizedString("Right Arm", comment: "")
         case .rightKidney:
-            string = "Right Kidney"
+            return NSLocalizedString("Right Kidney", comment: "")
         case .rightLeg:
-            string = "Right Leg"
+            return NSLocalizedString("Right Leg", comment: "")
         case .rightLung:
-            string = "Right Lung"
+            return NSLocalizedString("Right Lung", comment: "")
         }
-        return NSLocalizedString(string, comment: "")
     }
     
     var systemRow: SystemRow {
@@ -67,27 +65,25 @@ enum System: CustomStringConvertible {
     }
     
     var title: String {
-        let string: String
         switch self {
         case .gut:
-            string = "Gut"
+            return NSLocalizedString("Gut", comment: "")
         case .head:
-            string = "Head"
+            return NSLocalizedString("Head", comment: "")
         case .heart:
-            string = "Heart"
+            return NSLocalizedString("Heart", comment: "")
         case .leftArm, .rightArm:
-            string = "Arm"
+            return NSLocalizedString("Arm", comment: "")
         case .leftKidney, .rightKidney:
-            string = "Kidney"
+            return NSLocalizedString("Kidney", comment: "")
         case .leftLeg, .rightLeg:
-            string = "Leg"
+            return NSLocalizedString("Leg", comment: "")
         case .leftLung, .rightLung:
-            string = "Lung"
+            return NSLocalizedString("Lung", comment: "")
         case .liver:
-            string = "Liver"
+            return NSLocalizedString("Liver", comment: "")
         case .lowerBody:
-            string = "Lower Body"
+            return NSLocalizedString("Lower Body", comment: "")
         }
-        return NSLocalizedString(string, comment: "")
     }
 }
