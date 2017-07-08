@@ -103,14 +103,13 @@ final class ArteryView: UIView {
             targetY = tFrame.origin.y - halfPaddingHeight
         }
         
-        let delta: CGFloat
-        if targetY < path.currentPoint.y {
-            delta = (path.currentPoint.y - targetY) * -1
-        } else {
-            delta = targetY - path.currentPoint.y
-        }
-        
         if let _ = viewModel.originSystem {
+            let delta: CGFloat
+            if targetY < path.currentPoint.y {
+                delta = (path.currentPoint.y - targetY) * -1
+            } else {
+                delta = targetY - path.currentPoint.y
+            }
             path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + delta))
         } else {
             path.move(to: CGPoint(x: dataSource.aortaX, y: targetY))
