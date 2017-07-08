@@ -12,6 +12,6 @@ struct ArteryViewModel {
     let artery: Artery
     let borderColor: UIColor
     let fillColor: UIColor
-    let originSystem: SystemConnection
+    let originSystem: SystemConnection?
     let terminusSystem: SystemConnection
 }
