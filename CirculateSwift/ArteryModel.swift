@@ -37,6 +37,10 @@ struct ArteryModel {
                 SystemConnection(locale: .rightBottom, system: .head),
                 SystemConnection(locale: .topRight, system: .rightLeg)
             ]
+        case .carotid:
+            return [
+                SystemConnection(locale: .rightBottom, system: .head)
+            ]
         case .pulmonary:
             return [
                 SystemConnection(locale: .topLeft, system: .leftLung),

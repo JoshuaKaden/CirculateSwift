@@ -44,44 +44,46 @@ final class ArteryView: UIView {
         path.lineJoinStyle = .round
         path.lineWidth = 3.0
         
-        let oFrame = dataSource.findRect(system: viewModel.originSystem.system)
-        switch viewModel.originSystem.locale {
-        case .bottom:
-            path.move(to: CGPoint(x: oFrame.origin.x + (oFrame.width / 2), y: oFrame.origin.y + oFrame.height))
-            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + halfPaddingHeight))
-        case .bottomLeft:
-            path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y + oFrame.height))
-            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + halfPaddingHeight))
-        case .bottomRight:
-            path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y + oFrame.height))
-            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + halfPaddingHeight))
-        case .left:
-            path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y + (oFrame.height / 2)))
-            path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
-        case .leftBottom:
-            path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y + oFrame.height))
-            path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
-        case .leftTop:
-            path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y))
-            path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
-        case .right:
-            path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y + (oFrame.height / 2)))
-            path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
-        case .rightBottom:
-            path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y + oFrame.height))
-            path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
-        case .rightTop:
-            path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y))
-            path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
-        case .top:
-            path.move(to: CGPoint(x: oFrame.origin.x + (oFrame.width / 2), y: oFrame.origin.y))
-            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - halfPaddingHeight))
-        case .topLeft:
-            path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y))
-            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - halfPaddingHeight))
-        case .topRight:
-            path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y))
-            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - halfPaddingHeight))
+        if let originSystem = viewModel.originSystem {
+            let oFrame = dataSource.findRect(system: originSystem.system)
+            switch originSystem.locale {
+            case .bottom:
+                path.move(to: CGPoint(x: oFrame.origin.x + (oFrame.width / 2), y: oFrame.origin.y + oFrame.height))
+                path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + halfPaddingHeight))
+            case .bottomLeft:
+                path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y + oFrame.height))
+                path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + halfPaddingHeight))
+            case .bottomRight:
+                path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y + oFrame.height))
+                path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + halfPaddingHeight))
+            case .left:
+                path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y + (oFrame.height / 2)))
+                path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
+            case .leftBottom:
+                path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y + oFrame.height))
+                path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
+            case .leftTop:
+                path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y))
+                path.addLine(to: CGPoint(x: path.currentPoint.x - paddingSize.width, y: path.currentPoint.y))
+            case .right:
+                path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y + (oFrame.height / 2)))
+                path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
+            case .rightBottom:
+                path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y + oFrame.height))
+                path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
+            case .rightTop:
+                path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y))
+                path.addLine(to: CGPoint(x: path.currentPoint.x + paddingSize.width, y: path.currentPoint.y))
+            case .top:
+                path.move(to: CGPoint(x: oFrame.origin.x + (oFrame.width / 2), y: oFrame.origin.y))
+                path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - halfPaddingHeight))
+            case .topLeft:
+                path.move(to: CGPoint(x: oFrame.origin.x, y: oFrame.origin.y))
+                path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - halfPaddingHeight))
+            case .topRight:
+                path.move(to: CGPoint(x: oFrame.origin.x + oFrame.width, y: oFrame.origin.y))
+                path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - halfPaddingHeight))
+            }
         }
         
         let tFrame = dataSource.findRect(system: viewModel.terminusSystem.system)
@@ -107,7 +109,11 @@ final class ArteryView: UIView {
             delta = targetY - path.currentPoint.y
         }
         
-        path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + delta))
+        if let _ = viewModel.originSystem {
+            path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + delta))
+        } else {
+            path.move(to: CGPoint(x: tFrame.maxX + paddingSize.width, y: targetY))
+        }
         
         // Do not connect the aorta directly to the terminus system.
         if viewModel.artery == .aorta {
@@ -127,7 +133,7 @@ final class ArteryView: UIView {
         case .left, .leftBottom, .leftTop:
             path.addLine(to: CGPoint(x: tFrame.origin.x, y: path.currentPoint.y))
         case .right, .rightBottom, .rightTop:
-            path.addLine(to: CGPoint(x: tFrame.origin.x, y: path.currentPoint.y))
+            path.addLine(to: CGPoint(x: tFrame.origin.x + tFrame.width, y: path.currentPoint.y))
         case .top:
             path.addLine(to: CGPoint(x: tFrame.midX, y: path.currentPoint.y))
             path.addLine(to: CGPoint(x: path.currentPoint.x, y: tFrame.origin.y))

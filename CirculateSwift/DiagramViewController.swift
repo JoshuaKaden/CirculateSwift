@@ -12,7 +12,14 @@ final class DiagramViewController: UIViewController {
     
     private let arterialViewControllers: [ArteryViewController] = [
         ArteryViewController(artery: .aorta),
-        ArteryViewController(artery: .pulmonary)
+        ArteryViewController(artery: .carotid),
+        ArteryViewController(artery: .celiac),
+        ArteryViewController(artery: .gonadal),
+        ArteryViewController(artery: .hepatic),
+        ArteryViewController(artery: .iliac),
+        ArteryViewController(artery: .pulmonary),
+        ArteryViewController(artery: .renal),
+        ArteryViewController(artery: .subclavian)
     ]
     
     fileprivate let containerView = UIView()
@@ -76,6 +83,7 @@ final class DiagramViewController: UIViewController {
     
     deinit {
         systemViewControllers.forEach { $0.leaveParentViewController() }
+        arterialViewControllers.forEach { $0.leaveParentViewController() }
         NotificationCenter.default.removeObserver(self)
     }
 
