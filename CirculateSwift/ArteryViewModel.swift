@@ -9,6 +9,7 @@
 import UIKit
 
 struct ArteryViewModel {
+    let artery: Artery
     let borderColor: UIColor
     let fillColor: UIColor
     let originSystem: SystemConnection

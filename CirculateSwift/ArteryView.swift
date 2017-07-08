@@ -109,6 +109,11 @@ final class ArteryView: UIView {
         
         path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + delta))
         
+        // Do not connect the aorta directly to the terminus system.
+        if viewModel.artery == .aorta {
+            return path
+        }
+        
         switch viewModel.terminusSystem.locale {
         case .bottom:
             path.addLine(to: CGPoint(x: tFrame.midX, y: path.currentPoint.y))

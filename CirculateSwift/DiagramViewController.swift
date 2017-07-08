@@ -11,15 +11,18 @@ import UIKit
 final class DiagramViewController: UIViewController {
     
     private let arterialViewControllers: [ArteryViewController] = [
+        ArteryViewController(artery: .aorta),
         ArteryViewController(artery: .pulmonary)
     ]
-    private let containerView = UIView()
+    
+    fileprivate let containerView = UIView()
     private let heartAnimator = HeartAnimator()
     private var heartViewController: SystemViewController { return systemViewControllers[2] }
     fileprivate var isAnimating = false
     internal var paddingSize: CGSize { return CGSize(width: rowSize.width / 5, height: rowSize.height / 1.7) }
     private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
     private let rowViews = [UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView()]
+    
     private let systemViewControllers: [SystemViewController] = [
         SystemViewController(system: .gut),
         SystemViewController(system: .head),
@@ -35,6 +38,7 @@ final class DiagramViewController: UIViewController {
         SystemViewController(system: .rightLeg),
         SystemViewController(system: .rightLung)
     ]
+    
     private let touchscreen = TouchableView()
     private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
@@ -177,7 +181,7 @@ final class DiagramViewController: UIViewController {
 extension DiagramViewController: ArteryViewControllerDataSource {
     func findRect(system: System) -> CGRect {
         let systemVC = findSystemVC(system: system)
-        return view.convert(systemVC.view.frame, from: systemVC.view)
+        return view.convert(systemVC.view.bounds, from: systemVC.view)
     }
 }
 

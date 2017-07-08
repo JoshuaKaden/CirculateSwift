@@ -25,6 +25,7 @@
 		77C5995F1F06B38F00E58B0A /* ConnectionLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */; };
 		77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599601F06B43800E58B0A /* SystemConnection.swift */; };
 		77C599651F100DF200E58B0A /* ArteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599641F100DF200E58B0A /* ArteryViewModel.swift */; };
+		77C599671F1061B500E58B0A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 77C599661F1061B500E58B0A /* Podfile */; };
 		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
 		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
 		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
@@ -38,9 +39,11 @@
 		93E6C48D1EF4471B00CDC040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C48B1EF4471B00CDC040 /* Main.storyboard */; };
 		93E6C48F1EF4471B00CDC040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C48E1EF4471B00CDC040 /* Assets.xcassets */; };
 		93E6C4921EF4471B00CDC040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */; };
+		EB208371FBA1356D838208E5 /* Pods_CirculateSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97112D2E6E2C38830FFEA946 /* Pods_CirculateSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D086821AE9B61261D65B6CE /* Pods-CirculateSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CirculateSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		77C5993F1EFF041400E58B0A /* DiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
 		77C599421F00813B00E58B0A /* UIColor+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Inits.swift"; sourceTree = "<group>"; };
 		77C599441F0082AA00E58B0A /* UIColor+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionLocale.swift; sourceTree = "<group>"; };
 		77C599601F06B43800E58B0A /* SystemConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemConnection.swift; sourceTree = "<group>"; };
 		77C599641F100DF200E58B0A /* ArteryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewModel.swift; sourceTree = "<group>"; };
+		77C599661F1061B500E58B0A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
 		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		93E6C48E1EF4471B00CDC040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93E6C4911EF4471B00CDC040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93E6C4931EF4471B00CDC040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97112D2E6E2C38830FFEA946 /* Pods_CirculateSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CirculateSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A7A12E1455689F401E66EED /* Pods-CirculateSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CirculateSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB208371FBA1356D838208E5 /* Pods_CirculateSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +118,14 @@
 			name = Code;
 			sourceTree = "<group>";
 		};
+		92F5E7DBD1EF26AD0DA14B7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97112D2E6E2C38830FFEA946 /* Pods_CirculateSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		935F89FC1EF4490700623EA7 /* Code Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +147,8 @@
 			children = (
 				93E6C4861EF4471B00CDC040 /* CirculateSwift */,
 				93E6C4851EF4471B00CDC040 /* Products */,
+				FD16BAF70437F33B7237A503 /* Pods */,
+				92F5E7DBD1EF26AD0DA14B7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,9 +170,19 @@
 				93E6C4931EF4471B00CDC040 /* Info.plist */,
 				93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */,
 				93E6C48B1EF4471B00CDC040 /* Main.storyboard */,
+				77C599661F1061B500E58B0A /* Podfile */,
 				93E6C4891EF4471B00CDC040 /* ViewController.swift */,
 			);
 			path = CirculateSwift;
+			sourceTree = "<group>";
+		};
+		FD16BAF70437F33B7237A503 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D086821AE9B61261D65B6CE /* Pods-CirculateSwift.debug.xcconfig */,
+				9A7A12E1455689F401E66EED /* Pods-CirculateSwift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93E6C4961EF4471B00CDC040 /* Build configuration list for PBXNativeTarget "CirculateSwift" */;
 			buildPhases = (
+				17592B164C4EB28B53B33EC2 /* [CP] Check Pods Manifest.lock */,
 				93E6C4801EF4471B00CDC040 /* Sources */,
 				93E6C4811EF4471B00CDC040 /* Frameworks */,
 				93E6C4821EF4471B00CDC040 /* Resources */,
+				D91ED9676065A6AB745B6546 /* [CP] Embed Pods Frameworks */,
+				36E35BA3AAFC6DA7DAE79319 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,11 +250,60 @@
 			files = (
 				93E6C4921EF4471B00CDC040 /* LaunchScreen.storyboard in Resources */,
 				93E6C48F1EF4471B00CDC040 /* Assets.xcassets in Resources */,
+				77C599671F1061B500E58B0A /* Podfile in Resources */,
 				93E6C48D1EF4471B00CDC040 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17592B164C4EB28B53B33EC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		36E35BA3AAFC6DA7DAE79319 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D91ED9676065A6AB745B6546 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93E6C4801EF4471B00CDC040 /* Sources */ = {
@@ -381,6 +460,7 @@
 		};
 		93E6C4971EF4471B00CDC040 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D086821AE9B61261D65B6CE /* Pods-CirculateSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NF2C9YRD83;
@@ -394,6 +474,7 @@
 		};
 		93E6C4981EF4471B00CDC040 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A7A12E1455689F401E66EED /* Pods-CirculateSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NF2C9YRD83;
