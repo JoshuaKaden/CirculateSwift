@@ -49,6 +49,19 @@ final class DiagramViewController: UIViewController {
     private let touchscreen = TouchableView()
     private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
+    private let veinViewControllers: [VeinViewController] = [
+        VeinViewController(vein: .gonadal),
+        VeinViewController(vein: .hepatic),
+        VeinViewController(vein: .hepaticPortal),
+        VeinViewController(vein: .iliac),
+        VeinViewController(vein: .inferiorVenaCava),
+        VeinViewController(vein: .jugular),
+        VeinViewController(vein: .pulmonary),
+        VeinViewController(vein: .renal),
+        VeinViewController(vein: .subclavian),
+        VeinViewController(vein: .superiorVenaCava)
+    ]
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -75,6 +88,12 @@ final class DiagramViewController: UIViewController {
             self.adoptChildViewController(vc)
         }
         
+        veinViewControllers.forEach {
+            vc in
+            vc.dataSource = self
+            self.adoptChildViewController(vc)
+        }
+        
         touchscreen.delegate = self
         view.addSubview(touchscreen)
         
@@ -84,11 +103,20 @@ final class DiagramViewController: UIViewController {
     deinit {
         systemViewControllers.forEach { $0.leaveParentViewController() }
         arterialViewControllers.forEach { $0.leaveParentViewController() }
+        veinViewControllers.forEach { $0.leaveParentViewController() }
         NotificationCenter.default.removeObserver(self)
     }
 
     func didChangeOrientation(_ sender: Notification) {
         systemViewControllers.forEach {
+            $0.view.setNeedsDisplay()
+        }
+        
+        arterialViewControllers.forEach {
+            $0.view.setNeedsDisplay()
+        }
+        
+        veinViewControllers.forEach {
             $0.view.setNeedsDisplay()
         }
         
@@ -127,6 +155,7 @@ final class DiagramViewController: UIViewController {
         }
         
         arterialViewControllers.forEach { $0.view.frame = self.view.bounds }
+        veinViewControllers.forEach { $0.view.frame = self.view.bounds }
     }
     
     private func layoutRowViews() {
@@ -140,7 +169,7 @@ final class DiagramViewController: UIViewController {
             switch systemRow {
             case .lungs, .kidneys:
                 // room for top and bottom connections
-                view.y += paddingSize.height
+                view.y += paddingSize.height / 1.5
             default:
                 // no op
                 break
@@ -203,4 +232,10 @@ extension DiagramViewController: TouchableViewDelegate {
             startHeartAnimation()
         }
     }
+}
+
+// MARK: - VeinViewControllerDataSource
+
+extension DiagramViewController: VeinViewControllerDataSource {
+    // no op
 }

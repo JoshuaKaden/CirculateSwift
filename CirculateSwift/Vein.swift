@@ -9,7 +9,7 @@
 import Foundation
 
 enum Vein: CustomStringConvertible {
-    case pulmonary, superiorVenaCava, subclavian, hepaticPortal, hepatic, inferiorVenaCava, renal, gonadal, iliac
+    case jugular, pulmonary, superiorVenaCava, subclavian, hepaticPortal, hepatic, inferiorVenaCava, renal, gonadal, iliac
     
     var description: String {
         switch self {
@@ -23,6 +23,8 @@ enum Vein: CustomStringConvertible {
             return NSLocalizedString("Iliac Veins", comment: "")
         case .inferiorVenaCava:
             return NSLocalizedString("Inferior Vena Cava", comment: "")
+        case .jugular:
+            return NSLocalizedString("Jugular Veins", comment: "")
         case .pulmonary:
             return NSLocalizedString("Pulmonary Vein", comment: "")
         case .renal:
