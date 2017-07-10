@@ -201,13 +201,31 @@ final class DiagramViewController: UIViewController {
             .first!
     }
     
-    fileprivate func startHeartAnimation() {
+    fileprivate func startAnimation() {
+        startHeartAnimation()
+        startArterialAnimation()
+    }
+    
+    private func startArterialAnimation() {
+        
+    }
+    
+    private func startHeartAnimation() {
         let heartView = heartViewController.view as! SystemView
         heartAnimator.start(view: heartView)
         isAnimating = true
     }
     
-    fileprivate func stopHeartAnimation() {
+    fileprivate func stopAnimation() {
+        stopHeartAnimation()
+        stopArterialAnimation()
+    }
+    
+    private func stopArterialAnimation() {
+        
+    }
+    
+    private func stopHeartAnimation() {
         heartAnimator.stop()
         isAnimating = false
     }
@@ -227,9 +245,9 @@ extension DiagramViewController: ArteryViewControllerDataSource {
 extension DiagramViewController: TouchableViewDelegate {
     func didTouch(touchableView: TouchableView) {
         if isAnimating {
-            stopHeartAnimation()
+            stopAnimation()
         } else {
-            startHeartAnimation()
+            startAnimation()
         }
     }
 }
