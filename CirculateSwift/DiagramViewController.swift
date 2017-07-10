@@ -112,6 +112,14 @@ final class DiagramViewController: UIViewController {
             $0.view.setNeedsDisplay()
         }
         
+        arterialViewControllers.forEach {
+            $0.view.setNeedsDisplay()
+        }
+        
+        veinViewControllers.forEach {
+            $0.view.setNeedsDisplay()
+        }
+        
         if isAnimating {
             stopHeartAnimation()
             startHeartAnimation()
@@ -161,7 +169,7 @@ final class DiagramViewController: UIViewController {
             switch systemRow {
             case .lungs, .kidneys:
                 // room for top and bottom connections
-                view.y += paddingSize.height / 2
+                view.y += paddingSize.height / 1.5
             default:
                 // no op
                 break

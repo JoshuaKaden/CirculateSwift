@@ -21,6 +21,7 @@ final class ArteryView: UIView {
     init(viewModel: ArteryViewModel) {
         self.viewModel = viewModel
         super.init(frame: CGRect.zero)
+        contentMode = .redraw
     }
     
     required init?(coder aDecoder: NSCoder) {

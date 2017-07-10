@@ -22,6 +22,7 @@ final class VeinView: UIView {
     init(viewModel: VeinViewModel) {
         self.viewModel = viewModel
         super.init(frame: CGRect.zero)
+        contentMode = .redraw
     }
     
     required init?(coder aDecoder: NSCoder) {
