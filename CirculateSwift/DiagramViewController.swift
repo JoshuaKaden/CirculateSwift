@@ -161,7 +161,7 @@ final class DiagramViewController: UIViewController {
             switch systemRow {
             case .lungs, .kidneys:
                 // room for top and bottom connections
-                view.y += paddingSize.height
+                view.y += paddingSize.height / 2
             default:
                 // no op
                 break

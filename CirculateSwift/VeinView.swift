@@ -141,6 +141,10 @@ final class VeinView: UIView {
         
         path.addLine(to: CGPoint(x: targetX, y: path.currentPoint.y))
         
+        if viewModel.vein == .hepaticPortal {
+            path.addLine(to: CGPoint(x: path.currentPoint.x, y: tFrame.maxY))
+        }
+        
         return path
     }
 }
