@@ -11,6 +11,7 @@
 		7797D08A1F127409008482E4 /* VeinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D0891F127409008482E4 /* VeinView.swift */; };
 		7797D08C1F12753E008482E4 /* VeinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D08B1F12753E008482E4 /* VeinViewController.swift */; };
 		7797D08E1F127631008482E4 /* VeinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D08D1F127631008482E4 /* VeinViewModel.swift */; };
+		7797D0901F131DCB008482E4 /* ArteryAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D08F1F131DCB008482E4 /* ArteryAnimator.swift */; };
 		77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5993F1EFF041400E58B0A /* DiagramViewController.swift */; };
 		77C599431F00813B00E58B0A /* UIColor+Inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599421F00813B00E58B0A /* UIColor+Inits.swift */; };
 		77C599451F0082AA00E58B0A /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599441F0082AA00E58B0A /* UIColor+App.swift */; };
@@ -52,6 +53,7 @@
 		7797D0891F127409008482E4 /* VeinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinView.swift; sourceTree = "<group>"; };
 		7797D08B1F12753E008482E4 /* VeinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinViewController.swift; sourceTree = "<group>"; };
 		7797D08D1F127631008482E4 /* VeinViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinViewModel.swift; sourceTree = "<group>"; };
+		7797D08F1F131DCB008482E4 /* ArteryAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryAnimator.swift; sourceTree = "<group>"; };
 		77C5993F1EFF041400E58B0A /* DiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
 		77C599421F00813B00E58B0A /* UIColor+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Inits.swift"; sourceTree = "<group>"; };
 		77C599441F0082AA00E58B0A /* UIColor+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				77C599541F067BA400E58B0A /* Artery.swift */,
+				7797D08F1F131DCB008482E4 /* ArteryAnimator.swift */,
 				77C5995C1F06B13600E58B0A /* ArteryModel.swift */,
 				77C5995A1F06B06600E58B0A /* ArteryView.swift */,
 				77C599581F06B05500E58B0A /* ArteryViewController.swift */,
@@ -354,6 +357,7 @@
 				77C5995B1F06B06600E58B0A /* ArteryView.swift in Sources */,
 				93E6C4881EF4471B00CDC040 /* AppDelegate.swift in Sources */,
 				77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */,
+				7797D0901F131DCB008482E4 /* ArteryAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
