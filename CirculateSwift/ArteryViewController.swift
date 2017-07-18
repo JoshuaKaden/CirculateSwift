@@ -14,7 +14,7 @@ protocol ArteryViewControllerDataSource: class {
 }
 
 final class ArteryViewController: UIViewController {
-    private var arteryViews: [ArteryView] = []
+    private(set) var arteryViews: [ArteryView] = []
     weak var dataSource: ArteryViewControllerDataSource?
     let model: ArteryModel
     

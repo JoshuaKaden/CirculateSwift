@@ -44,6 +44,7 @@ final class VeinView: UIView {
         let paddingSize = dataSource.paddingSize
         let halfPaddingHeight = paddingSize.height / 2
         
+        path.lineCapStyle = .round
         path.lineJoinStyle = .round
         path.lineWidth = 3.0
         

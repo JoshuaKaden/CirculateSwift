@@ -10,6 +10,11 @@ import UIKit
 
 final class DiagramViewController: UIViewController {
     
+    private lazy var arteryAnimators: [ArteryAnimator] = {
+        let views = self.arterialViewControllers.flatMap { $0.arteryViews }
+        return (1...views.count).map { _ in return ArteryAnimator() }
+    }()
+    
     private let arterialViewControllers: [ArteryViewController] = [
         ArteryViewController(artery: .aorta),
         ArteryViewController(artery: .carotid),
@@ -201,15 +206,35 @@ final class DiagramViewController: UIViewController {
             .first!
     }
     
-    fileprivate func startHeartAnimation() {
-        let heartView = heartViewController.view as! SystemView
-        heartAnimator.start(view: heartView)
+    fileprivate func startAnimation() {
+        startHeartAnimation()
+        startArterialAnimation()
         isAnimating = true
     }
     
-    fileprivate func stopHeartAnimation() {
-        heartAnimator.stop()
+    private func startArterialAnimation() {
+        let views = arterialViewControllers.flatMap { $0.arteryViews }
+        let viewsAndAnimators = zip(views, arteryAnimators)
+        viewsAndAnimators.forEach { $0.1.start(view: $0.0) }
+    }
+    
+    private func startHeartAnimation() {
+        let heartView = heartViewController.view as! SystemView
+        heartAnimator.start(view: heartView)
+    }
+    
+    fileprivate func stopAnimation() {
+        stopHeartAnimation()
+        stopArterialAnimation()
         isAnimating = false
+    }
+    
+    private func stopArterialAnimation() {
+        arteryAnimators.forEach { $0.stop() }
+    }
+    
+    private func stopHeartAnimation() {
+        heartAnimator.stop()
     }
 }
 
@@ -227,9 +252,9 @@ extension DiagramViewController: ArteryViewControllerDataSource {
 extension DiagramViewController: TouchableViewDelegate {
     func didTouch(touchableView: TouchableView) {
         if isAnimating {
-            stopHeartAnimation()
+            stopAnimation()
         } else {
-            startHeartAnimation()
+            startAnimation()
         }
     }
 }

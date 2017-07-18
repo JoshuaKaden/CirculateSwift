@@ -70,8 +70,8 @@ struct ArteryModel {
             ]
         case .subclavian:
             return [
-                SystemConnection(locale: .topRight, system: .leftArm),
-                SystemConnection(locale: .topRight, system: .rightArm)
+                SystemConnection(locale: .topRight, system: .rightArm),
+                SystemConnection(locale: .topRight, system: .leftArm)
             ]
         }
     }
