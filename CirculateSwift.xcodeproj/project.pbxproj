@@ -7,14 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7797D0881F126FA1008482E4 /* VeinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D0871F126FA1008482E4 /* VeinModel.swift */; };
+		7797D08A1F127409008482E4 /* VeinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D0891F127409008482E4 /* VeinView.swift */; };
+		7797D08C1F12753E008482E4 /* VeinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D08B1F12753E008482E4 /* VeinViewController.swift */; };
+		7797D08E1F127631008482E4 /* VeinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D08D1F127631008482E4 /* VeinViewModel.swift */; };
+		7797D0901F131DCB008482E4 /* ArteryAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D08F1F131DCB008482E4 /* ArteryAnimator.swift */; };
+		7797D0921F1F760E008482E4 /* VeinAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797D0911F1F760E008482E4 /* VeinAnimator.swift */; };
+		77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5993F1EFF041400E58B0A /* DiagramViewController.swift */; };
+		77C599431F00813B00E58B0A /* UIColor+Inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599421F00813B00E58B0A /* UIColor+Inits.swift */; };
+		77C599451F0082AA00E58B0A /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599441F0082AA00E58B0A /* UIColor+App.swift */; };
+		77C599471F00860D00E58B0A /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599461F00860D00E58B0A /* System.swift */; };
+		77C599491F0139BD00E58B0A /* SystemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599481F0139BD00E58B0A /* SystemRow.swift */; };
+		77C5994B1F013CB900E58B0A /* SystemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5994A1F013CB900E58B0A /* SystemViewModel.swift */; };
+		77C5994D1F013D3300E58B0A /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5994C1F013D3300E58B0A /* SystemViewController.swift */; };
+		77C5994F1F013D5700E58B0A /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5994E1F013D5700E58B0A /* SystemView.swift */; };
+		77C599511F03D71500E58B0A /* HeartAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599501F03D71500E58B0A /* HeartAnimator.swift */; };
+		77C599531F04974000E58B0A /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599521F04974000E58B0A /* TouchableView.swift */; };
+		77C599551F067BA400E58B0A /* Artery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599541F067BA400E58B0A /* Artery.swift */; };
+		77C599571F067D3F00E58B0A /* Vein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599561F067D3F00E58B0A /* Vein.swift */; };
+		77C599591F06B05500E58B0A /* ArteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599581F06B05500E58B0A /* ArteryViewController.swift */; };
+		77C5995B1F06B06600E58B0A /* ArteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995A1F06B06600E58B0A /* ArteryView.swift */; };
+		77C5995D1F06B13600E58B0A /* ArteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995C1F06B13600E58B0A /* ArteryModel.swift */; };
+		77C5995F1F06B38F00E58B0A /* ConnectionLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */; };
+		77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599601F06B43800E58B0A /* SystemConnection.swift */; };
+		77C599651F100DF200E58B0A /* ArteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599641F100DF200E58B0A /* ArteryViewModel.swift */; };
+		77C599671F1061B500E58B0A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 77C599661F1061B500E58B0A /* Podfile */; };
+		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
+		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
+		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
+		935F8A071EF4492000623EA7 /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A001EF4492000623EA7 /* UIView+Layer.swift */; };
+		935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A011EF4492000623EA7 /* UIView+Layout.swift */; };
+		935F8A091EF4492000623EA7 /* UIViewController+Parenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */; };
+		935F8A0A1EF4492000623EA7 /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A031EF4492000623EA7 /* UIViewStyle.swift */; };
+		935F8A0C1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */; };
 		93E6C4881EF4471B00CDC040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E6C4871EF4471B00CDC040 /* AppDelegate.swift */; };
 		93E6C48A1EF4471B00CDC040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E6C4891EF4471B00CDC040 /* ViewController.swift */; };
 		93E6C48D1EF4471B00CDC040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C48B1EF4471B00CDC040 /* Main.storyboard */; };
 		93E6C48F1EF4471B00CDC040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C48E1EF4471B00CDC040 /* Assets.xcassets */; };
 		93E6C4921EF4471B00CDC040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */; };
+		EB208371FBA1356D838208E5 /* Pods_CirculateSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97112D2E6E2C38830FFEA946 /* Pods_CirculateSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D086821AE9B61261D65B6CE /* Pods-CirculateSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CirculateSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		7797D0871F126FA1008482E4 /* VeinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinModel.swift; sourceTree = "<group>"; };
+		7797D0891F127409008482E4 /* VeinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinView.swift; sourceTree = "<group>"; };
+		7797D08B1F12753E008482E4 /* VeinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinViewController.swift; sourceTree = "<group>"; };
+		7797D08D1F127631008482E4 /* VeinViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinViewModel.swift; sourceTree = "<group>"; };
+		7797D08F1F131DCB008482E4 /* ArteryAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryAnimator.swift; sourceTree = "<group>"; };
+		7797D0911F1F760E008482E4 /* VeinAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeinAnimator.swift; sourceTree = "<group>"; };
+		77C5993F1EFF041400E58B0A /* DiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
+		77C599421F00813B00E58B0A /* UIColor+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Inits.swift"; sourceTree = "<group>"; };
+		77C599441F0082AA00E58B0A /* UIColor+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
+		77C599461F00860D00E58B0A /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		77C599481F0139BD00E58B0A /* SystemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRow.swift; sourceTree = "<group>"; };
+		77C5994A1F013CB900E58B0A /* SystemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewModel.swift; sourceTree = "<group>"; };
+		77C5994C1F013D3300E58B0A /* SystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
+		77C5994E1F013D5700E58B0A /* SystemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
+		77C599501F03D71500E58B0A /* HeartAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartAnimator.swift; sourceTree = "<group>"; };
+		77C599521F04974000E58B0A /* TouchableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
+		77C599541F067BA400E58B0A /* Artery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artery.swift; sourceTree = "<group>"; };
+		77C599561F067D3F00E58B0A /* Vein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vein.swift; sourceTree = "<group>"; };
+		77C599581F06B05500E58B0A /* ArteryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewController.swift; sourceTree = "<group>"; };
+		77C5995A1F06B06600E58B0A /* ArteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryView.swift; sourceTree = "<group>"; };
+		77C5995C1F06B13600E58B0A /* ArteryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryModel.swift; sourceTree = "<group>"; };
+		77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionLocale.swift; sourceTree = "<group>"; };
+		77C599601F06B43800E58B0A /* SystemConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemConnection.swift; sourceTree = "<group>"; };
+		77C599641F100DF200E58B0A /* ArteryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewModel.swift; sourceTree = "<group>"; };
+		77C599661F1061B500E58B0A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
+		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
+		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
+		935F8A001EF4492000623EA7 /* UIView+Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layer.swift"; sourceTree = "<group>"; };
+		935F8A011EF4492000623EA7 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Parenting.swift"; sourceTree = "<group>"; };
+		935F8A031EF4492000623EA7 /* UIViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
+		935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFontDescriptor+Accessible.swift"; sourceTree = "<group>"; };
 		93E6C4841EF4471B00CDC040 /* CirculateSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirculateSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E6C4871EF4471B00CDC040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93E6C4891EF4471B00CDC040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +90,8 @@
 		93E6C48E1EF4471B00CDC040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93E6C4911EF4471B00CDC040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93E6C4931EF4471B00CDC040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97112D2E6E2C38830FFEA946 /* Pods_CirculateSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CirculateSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A7A12E1455689F401E66EED /* Pods-CirculateSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CirculateSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +99,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB208371FBA1356D838208E5 /* Pods_CirculateSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77C599411EFF061A00E58B0A /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				77C599541F067BA400E58B0A /* Artery.swift */,
+				7797D08F1F131DCB008482E4 /* ArteryAnimator.swift */,
+				77C5995C1F06B13600E58B0A /* ArteryModel.swift */,
+				77C5995A1F06B06600E58B0A /* ArteryView.swift */,
+				77C599581F06B05500E58B0A /* ArteryViewController.swift */,
+				77C599641F100DF200E58B0A /* ArteryViewModel.swift */,
+				77C5995E1F06B38F00E58B0A /* ConnectionLocale.swift */,
+				77C5993F1EFF041400E58B0A /* DiagramViewController.swift */,
+				77C599501F03D71500E58B0A /* HeartAnimator.swift */,
+				77C599461F00860D00E58B0A /* System.swift */,
+				77C599601F06B43800E58B0A /* SystemConnection.swift */,
+				77C599481F0139BD00E58B0A /* SystemRow.swift */,
+				77C5994E1F013D5700E58B0A /* SystemView.swift */,
+				77C5994C1F013D3300E58B0A /* SystemViewController.swift */,
+				77C5994A1F013CB900E58B0A /* SystemViewModel.swift */,
+				77C599521F04974000E58B0A /* TouchableView.swift */,
+				77C599441F0082AA00E58B0A /* UIColor+App.swift */,
+				77C599561F067D3F00E58B0A /* Vein.swift */,
+				7797D0911F1F760E008482E4 /* VeinAnimator.swift */,
+				7797D0871F126FA1008482E4 /* VeinModel.swift */,
+				7797D0891F127409008482E4 /* VeinView.swift */,
+				7797D08B1F12753E008482E4 /* VeinViewController.swift */,
+				7797D08D1F127631008482E4 /* VeinViewModel.swift */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		92F5E7DBD1EF26AD0DA14B7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97112D2E6E2C38830FFEA946 /* Pods_CirculateSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		935F89FC1EF4490700623EA7 /* Code Library */ = {
+			isa = PBXGroup;
+			children = (
+				935F89FD1EF4492000623EA7 /* TapButton.swift */,
+				935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */,
+				77C599421F00813B00E58B0A /* UIColor+Inits.swift */,
+				935F89FF1EF4492000623EA7 /* UIFont+App.swift */,
+				935F8A0B1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift */,
+				935F8A001EF4492000623EA7 /* UIView+Layer.swift */,
+				935F8A011EF4492000623EA7 /* UIView+Layout.swift */,
+				935F8A021EF4492000623EA7 /* UIViewController+Parenting.swift */,
+				935F8A031EF4492000623EA7 /* UIViewStyle.swift */,
+			);
+			name = "Code Library";
+			sourceTree = "<group>";
+		};
 		93E6C47B1EF4471B00CDC040 = {
 			isa = PBXGroup;
 			children = (
 				93E6C4861EF4471B00CDC040 /* CirculateSwift */,
 				93E6C4851EF4471B00CDC040 /* Products */,
+				FD16BAF70437F33B7237A503 /* Pods */,
+				92F5E7DBD1EF26AD0DA14B7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +182,25 @@
 			isa = PBXGroup;
 			children = (
 				93E6C4871EF4471B00CDC040 /* AppDelegate.swift */,
-				93E6C4891EF4471B00CDC040 /* ViewController.swift */,
-				93E6C48B1EF4471B00CDC040 /* Main.storyboard */,
 				93E6C48E1EF4471B00CDC040 /* Assets.xcassets */,
-				93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */,
+				77C599411EFF061A00E58B0A /* Code */,
+				935F89FC1EF4490700623EA7 /* Code Library */,
 				93E6C4931EF4471B00CDC040 /* Info.plist */,
+				93E6C4901EF4471B00CDC040 /* LaunchScreen.storyboard */,
+				93E6C48B1EF4471B00CDC040 /* Main.storyboard */,
+				77C599661F1061B500E58B0A /* Podfile */,
+				93E6C4891EF4471B00CDC040 /* ViewController.swift */,
 			);
 			path = CirculateSwift;
+			sourceTree = "<group>";
+		};
+		FD16BAF70437F33B7237A503 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D086821AE9B61261D65B6CE /* Pods-CirculateSwift.debug.xcconfig */,
+				9A7A12E1455689F401E66EED /* Pods-CirculateSwift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93E6C4961EF4471B00CDC040 /* Build configuration list for PBXNativeTarget "CirculateSwift" */;
 			buildPhases = (
+				17592B164C4EB28B53B33EC2 /* [CP] Check Pods Manifest.lock */,
 				93E6C4801EF4471B00CDC040 /* Sources */,
 				93E6C4811EF4471B00CDC040 /* Frameworks */,
 				93E6C4821EF4471B00CDC040 /* Resources */,
+				D91ED9676065A6AB745B6546 /* [CP] Embed Pods Frameworks */,
+				36E35BA3AAFC6DA7DAE79319 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +238,7 @@
 				TargetAttributes = {
 					93E6C4831EF4471B00CDC040 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = FP6GFC3W94;
+						DevelopmentTeam = NF2C9YRD83;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -126,19 +268,100 @@
 			files = (
 				93E6C4921EF4471B00CDC040 /* LaunchScreen.storyboard in Resources */,
 				93E6C48F1EF4471B00CDC040 /* Assets.xcassets in Resources */,
+				77C599671F1061B500E58B0A /* Podfile in Resources */,
 				93E6C48D1EF4471B00CDC040 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17592B164C4EB28B53B33EC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		36E35BA3AAFC6DA7DAE79319 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D91ED9676065A6AB745B6546 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CirculateSwift/Pods-CirculateSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93E6C4801EF4471B00CDC040 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C599531F04974000E58B0A /* TouchableView.swift in Sources */,
+				935F8A0A1EF4492000623EA7 /* UIViewStyle.swift in Sources */,
+				77C5994B1F013CB900E58B0A /* SystemViewModel.swift in Sources */,
+				77C599431F00813B00E58B0A /* UIColor+Inits.swift in Sources */,
+				7797D08A1F127409008482E4 /* VeinView.swift in Sources */,
+				77C5994F1F013D5700E58B0A /* SystemView.swift in Sources */,
+				77C599451F0082AA00E58B0A /* UIColor+App.swift in Sources */,
 				93E6C48A1EF4471B00CDC040 /* ViewController.swift in Sources */,
+				77C5994D1F013D3300E58B0A /* SystemViewController.swift in Sources */,
+				77C599491F0139BD00E58B0A /* SystemRow.swift in Sources */,
+				7797D0921F1F760E008482E4 /* VeinAnimator.swift in Sources */,
+				935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */,
+				77C599551F067BA400E58B0A /* Artery.swift in Sources */,
+				7797D08E1F127631008482E4 /* VeinViewModel.swift in Sources */,
+				935F8A0C1EF4499C00623EA7 /* UIFontDescriptor+Accessible.swift in Sources */,
+				935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */,
+				77C599571F067D3F00E58B0A /* Vein.swift in Sources */,
+				77C599651F100DF200E58B0A /* ArteryViewModel.swift in Sources */,
+				7797D0881F126FA1008482E4 /* VeinModel.swift in Sources */,
+				935F8A041EF4492000623EA7 /* TapButton.swift in Sources */,
+				77C599591F06B05500E58B0A /* ArteryViewController.swift in Sources */,
+				77C5995D1F06B13600E58B0A /* ArteryModel.swift in Sources */,
+				77C599471F00860D00E58B0A /* System.swift in Sources */,
+				77C599511F03D71500E58B0A /* HeartAnimator.swift in Sources */,
+				77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */,
+				935F8A071EF4492000623EA7 /* UIView+Layer.swift in Sources */,
+				935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */,
+				77C5995F1F06B38F00E58B0A /* ConnectionLocale.swift in Sources */,
+				7797D08C1F12753E008482E4 /* VeinViewController.swift in Sources */,
+				935F8A091EF4492000623EA7 /* UIViewController+Parenting.swift in Sources */,
+				77C5995B1F06B06600E58B0A /* ArteryView.swift in Sources */,
 				93E6C4881EF4471B00CDC040 /* AppDelegate.swift in Sources */,
+				77C599401EFF041400E58B0A /* DiagramViewController.swift in Sources */,
+				7797D0901F131DCB008482E4 /* ArteryAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +484,10 @@
 		};
 		93E6C4971EF4471B00CDC040 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D086821AE9B61261D65B6CE /* Pods-CirculateSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FP6GFC3W94;
+				DEVELOPMENT_TEAM = NF2C9YRD83;
 				INFOPLIST_FILE = CirculateSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chadford.com.CirculateSwift;
@@ -274,9 +498,10 @@
 		};
 		93E6C4981EF4471B00CDC040 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A7A12E1455689F401E66EED /* Pods-CirculateSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FP6GFC3W94;
+				DEVELOPMENT_TEAM = NF2C9YRD83;
 				INFOPLIST_FILE = CirculateSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chadford.com.CirculateSwift;
@@ -304,6 +529,7 @@
 				93E6C4981EF4471B00CDC040 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
