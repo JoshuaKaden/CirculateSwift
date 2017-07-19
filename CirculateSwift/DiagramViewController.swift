@@ -118,6 +118,7 @@ final class DiagramViewController: UIViewController {
     }
 
     func didChangeOrientation(_ sender: Notification) {
+        let shouldStartAnimating = isAnimating
         stopAnimation()
         
         systemViewControllers.forEach {
@@ -132,7 +133,7 @@ final class DiagramViewController: UIViewController {
             $0.view.setNeedsDisplay()
         }
         
-        if isAnimating {
+        if shouldStartAnimating {
             startAnimation()
         }
     }
