@@ -14,7 +14,7 @@ protocol VeinViewControllerDataSource: class {
 }
 
 final class VeinViewController: UIViewController {
-    private var veinViews: [VeinView] = []
+    private(set) var veinViews: [VeinView] = []
     weak var dataSource: VeinViewControllerDataSource?
     let model: VeinModel
     
