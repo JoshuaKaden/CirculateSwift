@@ -54,6 +54,11 @@ final class DiagramViewController: UIViewController {
     private let touchscreen = TouchableView()
     private var twinWidth: CGFloat { return (rowSize.width / 2) - (rowSize.width / 16) }
     
+    private lazy var veinAnimators: [VeinAnimator] = {
+        let views = self.veinViewControllers.flatMap { $0.veinViews }
+        return (1...views.count).map { _ in return VeinAnimator() }
+    }()
+    
     private let veinViewControllers: [VeinViewController] = [
         VeinViewController(vein: .gonadal),
         VeinViewController(vein: .hepatic),
@@ -113,6 +118,8 @@ final class DiagramViewController: UIViewController {
     }
 
     func didChangeOrientation(_ sender: Notification) {
+        stopAnimation()
+        
         systemViewControllers.forEach {
             $0.view.setNeedsDisplay()
         }
@@ -126,8 +133,7 @@ final class DiagramViewController: UIViewController {
         }
         
         if isAnimating {
-            stopHeartAnimation()
-            startHeartAnimation()
+            startAnimation()
         }
     }
     
@@ -209,6 +215,7 @@ final class DiagramViewController: UIViewController {
     fileprivate func startAnimation() {
         startHeartAnimation()
         startArterialAnimation()
+        startVeinAnimation()
         isAnimating = true
     }
     
@@ -223,9 +230,16 @@ final class DiagramViewController: UIViewController {
         heartAnimator.start(view: heartView)
     }
     
+    private func startVeinAnimation() {
+        let views = veinViewControllers.flatMap { $0.veinViews }
+        let viewsAndAnimators = zip(views, veinAnimators)
+        viewsAndAnimators.forEach { $0.1.start(view: $0.0) }
+    }
+    
     fileprivate func stopAnimation() {
         stopHeartAnimation()
         stopArterialAnimation()
+        stopVeinAnimation()
         isAnimating = false
     }
     
@@ -235,6 +249,10 @@ final class DiagramViewController: UIViewController {
     
     private func stopHeartAnimation() {
         heartAnimator.stop()
+    }
+    
+    private func stopVeinAnimation() {
+        veinAnimators.forEach { $0.stop() }
     }
 }
 
