@@ -37,7 +37,7 @@ final class VeinView: UIView {
         path.stroke()
     }
     
-    func buildPath() -> UIBezierPath {
+    func buildPath(lineWidth: CGFloat = 3) -> UIBezierPath {
         let path = UIBezierPath()
         guard let dataSource = dataSource else { return path }
         
@@ -46,7 +46,7 @@ final class VeinView: UIView {
         
         path.lineCapStyle = .round
         path.lineJoinStyle = .round
-        path.lineWidth = 3.0
+        path.lineWidth = lineWidth
         
         let originSystem = viewModel.originSystem
         let oFrame = dataSource.findRect(system: originSystem.system)
@@ -148,5 +148,48 @@ final class VeinView: UIView {
         }
         
         return path
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let path = buildPath()
+        for offset in (-5...5) {
+            let pointX = CGPoint(x: point.x + CGFloat(offset), y: point.y)
+            if containsPoint(pointX, path: path, inFillArea: false) {
+                return true
+            }
+            let pointY = CGPoint(x: point.x, y: point.y + CGFloat(offset))
+            if containsPoint(pointY, path: path, inFillArea: false) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    // From JaredH's solution on https://stackoverflow.com/questions/22691891/detecting-tap-inside-a-bezier-path
+    func containsPoint(_ point: CGPoint, path: UIBezierPath, inFillArea: Bool) -> Bool {
+        UIGraphicsBeginImageContext(self.size)
+        
+        let context: CGContext? = UIGraphicsGetCurrentContext()
+        let pathToTest = path.cgPath
+        var isHit = false
+        
+        var mode: CGPathDrawingMode = CGPathDrawingMode.stroke
+        
+        if inFillArea {
+            // check if UIBezierPath uses EO fill
+            if path.usesEvenOddFillRule {
+                mode = CGPathDrawingMode.eoFill
+            } else {
+                mode = CGPathDrawingMode.fill
+            }
+        } // else mode == stroke
+        
+        context?.saveGState()
+        context?.addPath(pathToTest)
+        
+        isHit = (context?.pathContains(point, mode: mode))!
+        context?.restoreGState()
+        
+        return isHit
     }
 }

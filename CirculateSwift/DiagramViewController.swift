@@ -84,6 +84,7 @@ final class DiagramViewController: UIViewController {
             self.containerView.addSubview(view)
         }
         
+        containerView.isUserInteractionEnabled = false
         view.addSubview(containerView)
         
         systemViewControllers.forEach {
