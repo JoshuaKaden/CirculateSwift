@@ -27,6 +27,10 @@ final class ArteryViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
         
+    override func loadView() {
+        view = SubviewHitTestView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
@@ -38,6 +42,10 @@ final class ArteryViewController: UIViewController {
             view.dataSource = self
             self.view.addSubview(view)
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print(model.artery)
     }
     
     override func viewDidLayoutSubviews() {
