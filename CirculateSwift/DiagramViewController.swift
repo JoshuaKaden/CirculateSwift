@@ -144,6 +144,7 @@ final class DiagramViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         touchscreen.frame = view.bounds
+        view.sendSubview(toBack: touchscreen)
         
         layoutRowViews()
         
@@ -194,6 +195,7 @@ final class DiagramViewController: UIViewController {
         containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
         
         containerView.centerInSuperview()
+        view.bringSubview(toFront: containerView)
     }
     
     // MARK: - Private
