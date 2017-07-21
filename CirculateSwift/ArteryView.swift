@@ -29,14 +29,14 @@ final class ArteryView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let path = buildPath()
+        let path = buildPath(lineWidth: viewModel.borderWidth)
         viewModel.borderColor.setStroke()
         viewModel.fillColor.setFill()
         path.fill()
         path.stroke()
     }
     
-    func buildPath() -> UIBezierPath {
+    func buildPath(lineWidth: CGFloat) -> UIBezierPath {
         let path = UIBezierPath()
         guard let dataSource = dataSource else { return path }
         
@@ -151,7 +151,7 @@ final class ArteryView: UIView {
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        let path = buildPath()
+        let path = buildPath(lineWidth: viewModel.borderWidth)
         for offset in (-5...5) {
             let pointX = CGPoint(x: point.x + CGFloat(offset), y: point.y)
             if containsPoint(pointX, path: path, inFillArea: false) {

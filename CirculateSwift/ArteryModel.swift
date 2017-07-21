@@ -11,12 +11,15 @@ import UIKit
 struct ArteryModel {
     let artery: Artery
     
-    var borderColor: UIColor {
+    let borderColor: UIColor
+    var borderColorLight: UIColor {
         if artery == .pulmonary {
-            return .deoxygenated
+            return .lightDeoxygenated
         }
-        return .oxygenated
+        return .lightOxygenated
     }
+    
+    let borderWidth: CGFloat
     let fillColor: UIColor = UIColor.clear
     
     var systemOrigins: [SystemConnection]? {
@@ -74,5 +77,27 @@ struct ArteryModel {
                 SystemConnection(locale: .topRight, system: .leftArm)
             ]
         }
+    }
+}
+
+// MARK: - Custom initializer
+
+extension ArteryModel {
+    init(artery: Artery, borderWidth: CGFloat = 3, isHighlighted: Bool = false) {
+        self.artery = artery
+        if artery == .pulmonary {
+            if isHighlighted {
+                borderColor = .lightDeoxygenated
+            } else {
+                borderColor = .deoxygenated
+            }
+        } else {
+            if isHighlighted {
+                borderColor = .lightOxygenated
+            } else {
+                borderColor = .oxygenated
+            }
+        }
+        self.borderWidth = borderWidth
     }
 }

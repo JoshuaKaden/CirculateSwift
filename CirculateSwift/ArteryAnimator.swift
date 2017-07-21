@@ -45,7 +45,7 @@ final class ArteryAnimator {
         group.animations = [pulse1, pulse2]
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = view.buildPath().cgPath
+        shapeLayer.path = view.buildPath(lineWidth: view.viewModel.borderWidth).cgPath
         shapeLayer.strokeColor = color.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 3
