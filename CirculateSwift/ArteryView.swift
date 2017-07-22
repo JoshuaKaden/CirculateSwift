@@ -45,7 +45,7 @@ final class ArteryView: UIView {
 
         path.lineCapStyle = .round
         path.lineJoinStyle = .round
-        path.lineWidth = 3.0
+        path.lineWidth = lineWidth
         
         if let originSystem = viewModel.originSystem {
             let oFrame = dataSource.findRect(system: originSystem.system)

@@ -14,7 +14,7 @@ protocol ArteryViewControllerDataSource: class {
 }
 
 protocol ArteryViewControllerDelegate: class {
-    func didTouch(arteryViewController: ArteryViewController)
+    func didTouch(point: CGPoint, arteryViewController: ArteryViewController)
 }
 
 final class ArteryViewController: UIViewController {
@@ -54,7 +54,8 @@ final class ArteryViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        delegate?.didTouch(arteryViewController: self)
+        guard let point = touches.first?.location(in: view) else { return }
+        delegate?.didTouch(point: point, arteryViewController: self)
     }
     
     override func viewDidLayoutSubviews() {

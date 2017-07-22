@@ -14,7 +14,7 @@ protocol VeinViewControllerDataSource: class {
 }
 
 protocol VeinViewControllerDelegate: class {
-    func didTouch(veinViewController: VeinViewController)
+    func didTouch(point: CGPoint, veinViewController: VeinViewController)
 }
 
 final class VeinViewController: UIViewController {
@@ -54,7 +54,8 @@ final class VeinViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        delegate?.didTouch(veinViewController: self)
+        guard let point = touches.first?.location(in: view) else { return }
+        delegate?.didTouch(point: point, veinViewController: self)
     }
     
     override func viewDidLayoutSubviews() {
