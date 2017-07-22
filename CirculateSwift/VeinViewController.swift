@@ -13,18 +13,31 @@ protocol VeinViewControllerDataSource: class {
     func findRect(system: System) -> CGRect
 }
 
+protocol VeinViewControllerDelegate: class {
+    func didTouch(point: CGPoint, veinViewController: VeinViewController)
+}
+
 final class VeinViewController: UIViewController {
     private(set) var veinViews: [VeinView] = []
     weak var dataSource: VeinViewControllerDataSource?
+    weak var delegate: VeinViewControllerDelegate?
     let model: VeinModel
     
-    init(vein: Vein) {
-        self.model = VeinModel(vein: vein)
+    init(model: VeinModel) {
+        self.model = model
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init(vein: Vein) {
+        self.init(model: VeinModel(vein: vein))
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        view = SubviewHitTestView()
     }
     
     override func viewDidLoad() {
@@ -40,6 +53,11 @@ final class VeinViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let point = touches.first?.location(in: view) else { return }
+        delegate?.didTouch(point: point, veinViewController: self)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         veinViews.forEach { $0.frame = self.view.bounds }
@@ -48,13 +66,13 @@ final class VeinViewController: UIViewController {
     private func buildVeinViews() {
         let systemTerminus = model.systemTermini?.first
         if let systemOrigin = model.systemOrigins?.first {
-            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
+            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
             let view = VeinView(viewModel: viewModel)
             veinViews.append(view)
         }
         if let systemOrigins = model.systemOrigins, systemOrigins.count == 2 {
             let systemOrigin = systemOrigins[1]
-            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
+            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
             let view = VeinView(viewModel: viewModel)
             veinViews.append(view)
         }

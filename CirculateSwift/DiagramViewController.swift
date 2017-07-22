@@ -30,6 +30,7 @@ final class DiagramViewController: UIViewController {
     fileprivate let containerView = UIView()
     private let heartAnimator = HeartAnimator()
     private var heartViewController: SystemViewController { return systemViewControllers[2] }
+    fileprivate var highlightedViewController: UIViewController?
     fileprivate var isAnimating = false
     internal var paddingSize: CGSize { return CGSize(width: rowSize.width / 5, height: rowSize.height / 1.7) }
     private var rowSize: CGSize { return CGSize(width: view.width / 2, height: view.height / 15) }
@@ -84,6 +85,7 @@ final class DiagramViewController: UIViewController {
             self.containerView.addSubview(view)
         }
         
+        containerView.isUserInteractionEnabled = false
         view.addSubview(containerView)
         
         systemViewControllers.forEach {
@@ -95,12 +97,14 @@ final class DiagramViewController: UIViewController {
         arterialViewControllers.forEach {
             vc in
             vc.dataSource = self
+            vc.delegate = self
             self.adoptChildViewController(vc)
         }
         
         veinViewControllers.forEach {
             vc in
             vc.dataSource = self
+            vc.delegate = self
             self.adoptChildViewController(vc)
         }
         
@@ -114,6 +118,7 @@ final class DiagramViewController: UIViewController {
         systemViewControllers.forEach { $0.leaveParentViewController() }
         arterialViewControllers.forEach { $0.leaveParentViewController() }
         veinViewControllers.forEach { $0.leaveParentViewController() }
+        highlightedViewController?.leaveParentViewController()
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -144,6 +149,7 @@ final class DiagramViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         touchscreen.frame = view.bounds
+        view.sendSubview(toBack: touchscreen)
         
         layoutRowViews()
         
@@ -194,6 +200,11 @@ final class DiagramViewController: UIViewController {
         containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
         
         containerView.centerInSuperview()
+        view.bringSubview(toFront: containerView)
+        
+        if let highlightedView = highlightedViewController?.view {
+            view.bringSubview(toFront: highlightedView)
+        }
     }
     
     // MARK: - Private
@@ -211,6 +222,40 @@ final class DiagramViewController: UIViewController {
         return systemViewControllers
             .filter { $0.viewModel.system == system }
             .first!
+    }
+    
+    fileprivate func handleTouch(point: CGPoint, viewController: UIViewController) {
+        if let _ = self.highlightedViewController { return }
+        
+        var title: String = ""
+        
+        if let arteryViewController = viewController as? ArteryViewController {
+            let model = ArteryModel(artery: arteryViewController.model.artery, borderWidth: 6, isHighlighted: true)
+            let vc = ArteryViewController(model: model)
+            vc.dataSource = self
+            self.highlightedViewController = vc
+            title = model.artery.title
+        }
+        
+        if let veinViewController = viewController as? VeinViewController {
+            let model = VeinModel(vein: veinViewController.model.vein, borderWidth: 6, isHighlighted: true)
+            let vc = VeinViewController(model: model)
+            vc.dataSource = self
+            self.highlightedViewController = vc
+            title = model.vein.title
+        }
+        
+        guard let highlightedViewController = highlightedViewController else { return }
+        highlightedViewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.65)
+        highlightedViewController.view.frame = view.bounds
+        adoptChildViewController(highlightedViewController)
+        
+        let origin: CGPoint = point
+
+        let vc = ExplainerViewController(title: title, touchPoint: origin)
+        vc.delegate = self
+        vc.view.frame = highlightedViewController.view.bounds
+        highlightedViewController.adoptChildViewController(vc)
     }
     
     fileprivate func startAnimation() {
@@ -266,6 +311,24 @@ extension DiagramViewController: ArteryViewControllerDataSource {
     }
 }
 
+// MARK: - ArteryViewControllerDelegate
+
+extension DiagramViewController: ArteryViewControllerDelegate {
+    func didTouch(point: CGPoint, arteryViewController: ArteryViewController) {
+        handleTouch(point: point, viewController: arteryViewController)
+    }
+}
+
+// MARK: - ExplainerViewControllerDelegate
+
+extension DiagramViewController: ExplainerViewControllerDelegate {
+    func didTouch(explainerViewController: ExplainerViewController) {
+        explainerViewController.leaveParentViewController()
+        highlightedViewController?.leaveParentViewController()
+        highlightedViewController = nil
+    }
+}
+
 // MARK: - TouchableViewDelegate
 
 extension DiagramViewController: TouchableViewDelegate {
@@ -282,4 +345,12 @@ extension DiagramViewController: TouchableViewDelegate {
 
 extension DiagramViewController: VeinViewControllerDataSource {
     // no op
+}
+
+// MARK: - VeinViewControllerDelegate
+
+extension DiagramViewController: VeinViewControllerDelegate {
+    func didTouch(point: CGPoint, veinViewController: VeinViewController) {
+        handleTouch(point: point, viewController: veinViewController)
+    }
 }

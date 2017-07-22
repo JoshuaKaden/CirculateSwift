@@ -40,7 +40,7 @@ final class VeinAnimator {
         pulse1.repeatCount = HUGE
         
         let shapeLayer1 = CAShapeLayer()
-        shapeLayer1.path = view.buildPath().cgPath
+        shapeLayer1.path = view.buildPath(lineWidth: view.viewModel.borderWidth).cgPath
         shapeLayer1.strokeColor = color1.cgColor
         shapeLayer1.fillColor = UIColor.clear.cgColor
         shapeLayer1.lineWidth = 3
@@ -57,7 +57,7 @@ final class VeinAnimator {
         pulse2.repeatCount = HUGE
         
         let shapeLayer2 = CAShapeLayer()
-        shapeLayer2.path = view.buildPath().cgPath
+        shapeLayer2.path = view.buildPath(lineWidth: view.viewModel.borderWidth).cgPath
         shapeLayer2.strokeColor = color2.cgColor
         shapeLayer2.fillColor = UIColor.clear.cgColor
         shapeLayer2.lineWidth = 3
