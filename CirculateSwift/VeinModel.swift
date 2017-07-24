@@ -11,14 +11,17 @@ import UIKit
 struct VeinModel {
     let vein: Vein
     
-    var borderColor: UIColor {
+    let borderColor: UIColor
+    var borderColorLight: UIColor {
         switch vein {
         case .hepaticPortal, .pulmonary:
-            return .oxygenated
+            return .lightOxygenated
         default:
-            return .deoxygenated
+            return .lightDeoxygenated
         }
     }
+    
+    let borderWidth: CGFloat
     let fillColor: UIColor = .clear
     
     var systemOrigins: [SystemConnection]? {
@@ -101,5 +104,28 @@ struct VeinModel {
                 SystemConnection(locale: .left, system: .heart)
             ]
         }
+    }
+}
+
+// MARK: - Custom initializer
+
+extension VeinModel {
+    init(vein: Vein, borderWidth: CGFloat = 3, isHighlighted: Bool = false) {
+        self.vein = vein
+        switch vein {
+        case .hepaticPortal, .pulmonary:
+            if isHighlighted {
+                borderColor = .lightOxygenated
+            } else {
+                borderColor = .oxygenated
+            }
+        default:
+            if isHighlighted {
+                borderColor = .lightDeoxygenated
+            } else {
+                borderColor = .deoxygenated
+            }
+        }
+        self.borderWidth = borderWidth
     }
 }

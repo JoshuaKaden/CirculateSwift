@@ -30,14 +30,14 @@ final class VeinView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let path = buildPath()
+        let path = buildPath(lineWidth: viewModel.borderWidth)
         viewModel.borderColor.setStroke()
         viewModel.fillColor.setFill()
         path.fill()
         path.stroke()
     }
     
-    func buildPath() -> UIBezierPath {
+    func buildPath(lineWidth: CGFloat) -> UIBezierPath {
         let path = UIBezierPath()
         guard let dataSource = dataSource else { return path }
         
@@ -46,7 +46,7 @@ final class VeinView: UIView {
         
         path.lineCapStyle = .round
         path.lineJoinStyle = .round
-        path.lineWidth = 3.0
+        path.lineWidth = lineWidth
         
         let originSystem = viewModel.originSystem
         let oFrame = dataSource.findRect(system: originSystem.system)
@@ -148,5 +148,18 @@ final class VeinView: UIView {
         }
         
         return path
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let path = buildPath(lineWidth: viewModel.borderWidth)
+        let points: [[CGPoint]] = (-5...5).map {
+            index in
+            let offset = CGFloat(index)
+            return [
+                CGPoint(x: point.x + offset, y: point.y),
+                CGPoint(x: point.x, y: point.y + offset)
+            ]
+        }
+        return containsPoints(Array(points.joined()), path: path, inFillArea: false)
     }
 }
