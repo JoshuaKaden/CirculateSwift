@@ -34,6 +34,7 @@
 		77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599601F06B43800E58B0A /* SystemConnection.swift */; };
 		77C599651F100DF200E58B0A /* ArteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C599641F100DF200E58B0A /* ArteryViewModel.swift */; };
 		77C599671F1061B500E58B0A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 77C599661F1061B500E58B0A /* Podfile */; };
+		77E0630D1F23990000E40F53 /* UIView+ContainsPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0630C1F23990000E40F53 /* UIView+ContainsPoint.swift */; };
 		935F8A041EF4492000623EA7 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FD1EF4492000623EA7 /* TapButton.swift */; };
 		935F8A051EF4492000623EA7 /* UIButton+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */; };
 		935F8A061EF4492000623EA7 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F89FF1EF4492000623EA7 /* UIFont+App.swift */; };
@@ -79,6 +80,7 @@
 		77C599601F06B43800E58B0A /* SystemConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemConnection.swift; sourceTree = "<group>"; };
 		77C599641F100DF200E58B0A /* ArteryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArteryViewModel.swift; sourceTree = "<group>"; };
 		77C599661F1061B500E58B0A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		77E0630C1F23990000E40F53 /* UIView+ContainsPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ContainsPoint.swift"; sourceTree = "<group>"; };
 		935F89FD1EF4492000623EA7 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		935F89FE1EF4492000623EA7 /* UIButton+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Setup.swift"; sourceTree = "<group>"; };
 		935F89FF1EF4492000623EA7 /* UIFont+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				77C5994A1F013CB900E58B0A /* SystemViewModel.swift */,
 				77C599521F04974000E58B0A /* TouchableView.swift */,
 				77C599441F0082AA00E58B0A /* UIColor+App.swift */,
+				77E0630C1F23990000E40F53 /* UIView+ContainsPoint.swift */,
 				77C599561F067D3F00E58B0A /* Vein.swift */,
 				7797D0911F1F760E008482E4 /* VeinAnimator.swift */,
 				7797D0871F126FA1008482E4 /* VeinModel.swift */,
@@ -360,6 +363,7 @@
 				77C5995D1F06B13600E58B0A /* ArteryModel.swift in Sources */,
 				77C599471F00860D00E58B0A /* System.swift in Sources */,
 				77C599511F03D71500E58B0A /* HeartAnimator.swift in Sources */,
+				77E0630D1F23990000E40F53 /* UIView+ContainsPoint.swift in Sources */,
 				77C599611F06B43800E58B0A /* SystemConnection.swift in Sources */,
 				935F8A071EF4492000623EA7 /* UIView+Layer.swift in Sources */,
 				935F8A081EF4492000623EA7 /* UIView+Layout.swift in Sources */,

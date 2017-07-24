@@ -152,44 +152,14 @@ final class VeinView: UIView {
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let path = buildPath(lineWidth: viewModel.borderWidth)
-        for offset in (-5...5) {
-            let pointX = CGPoint(x: point.x + CGFloat(offset), y: point.y)
-            if containsPoint(pointX, path: path, inFillArea: false) {
-                return true
-            }
-            let pointY = CGPoint(x: point.x, y: point.y + CGFloat(offset))
-            if containsPoint(pointY, path: path, inFillArea: false) {
-                return true
-            }
+        let points: [[CGPoint]] = (-5...5).map {
+            index in
+            let offset = CGFloat(index)
+            return [
+                CGPoint(x: point.x + offset, y: point.y),
+                CGPoint(x: point.x, y: point.y + offset)
+            ]
         }
-        return false
-    }
-    
-    // From JaredH's solution on https://stackoverflow.com/questions/22691891/detecting-tap-inside-a-bezier-path
-    func containsPoint(_ point: CGPoint, path: UIBezierPath, inFillArea: Bool) -> Bool {
-        UIGraphicsBeginImageContext(self.size)
-        
-        let context: CGContext? = UIGraphicsGetCurrentContext()
-        let pathToTest = path.cgPath
-        var isHit = false
-        
-        var mode: CGPathDrawingMode = CGPathDrawingMode.stroke
-        
-        if inFillArea {
-            // check if UIBezierPath uses EO fill
-            if path.usesEvenOddFillRule {
-                mode = CGPathDrawingMode.eoFill
-            } else {
-                mode = CGPathDrawingMode.fill
-            }
-        } // else mode == stroke
-        
-        context?.saveGState()
-        context?.addPath(pathToTest)
-        
-        isHit = (context?.pathContains(point, mode: mode))!
-        context?.restoreGState()
-        
-        return isHit
+        return containsPoints(Array(points.joined()), path: path, inFillArea: false)
     }
 }

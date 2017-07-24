@@ -15,16 +15,8 @@ final class VeinAnimator {
     func start(view: VeinView) {
         stop()
         
-        let color1: UIColor
-        let color2: UIColor
-        switch view.viewModel.vein {
-        case .pulmonary, .hepaticPortal:
-            color1 = .lightOxygenated
-            color2 = .oxygenated
-        default:
-            color1 = .lightDeoxygenated
-            color2 = .deoxygenated
-        }
+        let color1 = view.viewModel.borderColorLight
+        let color2 = view.viewModel.borderColor
         
         let floorLayer = CALayer()
         floorLayer.frame = view.bounds
@@ -68,8 +60,14 @@ final class VeinAnimator {
     }
     
     func stop() {
-        floorLayer?.removeAllAnimations()
-        floorLayer?.removeFromSuperlayer()
-        floorLayer = nil
+        guard let floorLayer = floorLayer else { return }
+        floorLayer.sublayers?.forEach {
+            sublayer in
+            sublayer.removeAllAnimations()
+            sublayer.removeFromSuperlayer()
+        }
+        floorLayer.removeAllAnimations()
+        floorLayer.removeFromSuperlayer()
+        self.floorLayer = nil
     }
 }

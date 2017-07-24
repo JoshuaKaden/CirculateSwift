@@ -15,13 +15,7 @@ final class ArteryAnimator {
     func start(view: ArteryView) {
         stop()
         
-        let color: UIColor
-        switch view.viewModel.artery {
-        case .pulmonary:
-            color = .lightDeoxygenated
-        default:
-            color = .lightOxygenated
-        }
+        let color = view.viewModel.borderColorLight
         
         let floorLayer = CALayer()
         floorLayer.frame = view.bounds
@@ -56,8 +50,14 @@ final class ArteryAnimator {
     }
     
     func stop() {
-        floorLayer?.removeAllAnimations()
-        floorLayer?.removeFromSuperlayer()
-        floorLayer = nil
+        guard let floorLayer = floorLayer else { return }
+        floorLayer.sublayers?.forEach {
+            sublayer in
+            sublayer.removeAllAnimations()
+            sublayer.removeFromSuperlayer()
+        }
+        floorLayer.removeAllAnimations()
+        floorLayer.removeFromSuperlayer()
+        self.floorLayer = nil
     }
 }
