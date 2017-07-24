@@ -11,6 +11,7 @@ import UIKit
 struct ArteryViewModel {
     let artery: Artery
     let borderColor: UIColor
+    let borderColorLight: UIColor
     let borderWidth: CGFloat
     let fillColor: UIColor
     let originSystem: SystemConnection?

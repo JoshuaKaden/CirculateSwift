@@ -66,13 +66,13 @@ final class VeinViewController: UIViewController {
     private func buildVeinViews() {
         let systemTerminus = model.systemTermini?.first
         if let systemOrigin = model.systemOrigins?.first {
-            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
+            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, borderColorLight: model.borderColorLight, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
             let view = VeinView(viewModel: viewModel)
             veinViews.append(view)
         }
         if let systemOrigins = model.systemOrigins, systemOrigins.count == 2 {
             let systemOrigin = systemOrigins[1]
-            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
+            let viewModel = VeinViewModel(vein: model.vein, borderColor: model.borderColor, borderColorLight: model.borderColorLight, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
             let view = VeinView(viewModel: viewModel)
             veinViews.append(view)
         }

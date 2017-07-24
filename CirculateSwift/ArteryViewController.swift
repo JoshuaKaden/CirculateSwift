@@ -66,13 +66,13 @@ final class ArteryViewController: UIViewController {
     private func buildArteryViews() {
         let systemOrigin = model.systemOrigins?.first
         if let systemTerminus = model.systemTermini?.first {
-            let viewModel = ArteryViewModel(artery: model.artery, borderColor: model.borderColor, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
+            let viewModel = ArteryViewModel(artery: model.artery, borderColor: model.borderColor, borderColorLight: model.borderColorLight, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
             let view = ArteryView(viewModel: viewModel)
             arteryViews.append(view)
         }
         if let systemTermini = model.systemTermini, systemTermini.count == 2 {
             let systemTerminus = systemTermini[1]
-            let viewModel = ArteryViewModel(artery: model.artery, borderColor: model.borderColor, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
+            let viewModel = ArteryViewModel(artery: model.artery, borderColor: model.borderColor, borderColorLight: model.borderColorLight, borderWidth: model.borderWidth, fillColor: model.fillColor, originSystem: systemOrigin, terminusSystem: systemTerminus)
             let view = ArteryView(viewModel: viewModel)
             arteryViews.append(view)
         }
