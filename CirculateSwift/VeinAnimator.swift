@@ -36,7 +36,7 @@ final class VeinAnimator {
         shapeLayer1.strokeColor = color1.cgColor
         shapeLayer1.fillColor = UIColor.clear.cgColor
         shapeLayer1.lineWidth = 3
-        shapeLayer1.lineCap = kCALineCapRound
+        shapeLayer1.lineCap = CAShapeLayerLineCap.round
         shapeLayer1.add(pulse1, forKey: "pulse1")
         
         floorLayer.addSublayer(shapeLayer1)
@@ -53,7 +53,7 @@ final class VeinAnimator {
         shapeLayer2.strokeColor = color2.cgColor
         shapeLayer2.fillColor = UIColor.clear.cgColor
         shapeLayer2.lineWidth = 3
-        shapeLayer2.lineCap = kCALineCapRound
+        shapeLayer2.lineCap = CAShapeLayerLineCap.round
         shapeLayer2.add(pulse2, forKey: "pulse2")
         
         floorLayer.addSublayer(shapeLayer2)

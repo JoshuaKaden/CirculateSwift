@@ -111,7 +111,6 @@ final class DiagramViewController: UIViewController {
         touchscreen.delegate = self
         view.addSubview(touchscreen)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didChangeOrientation(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     deinit {
@@ -149,7 +148,7 @@ final class DiagramViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         touchscreen.frame = view.bounds
-        view.sendSubview(toBack: touchscreen)
+        view.sendSubviewToBack(touchscreen)
         
         layoutRowViews()
         
@@ -200,10 +199,10 @@ final class DiagramViewController: UIViewController {
         containerView.size = CGSize(width: rowSize.width, height: lastRowView.maxY)
         
         containerView.centerInSuperview()
-        view.bringSubview(toFront: containerView)
+        view.bringSubviewToFront(containerView)
         
         if let highlightedView = highlightedViewController?.view {
-            view.bringSubview(toFront: highlightedView)
+            view.bringSubviewToFront(highlightedView)
         }
     }
     

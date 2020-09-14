@@ -11,7 +11,7 @@ import UIKit
 /// http://stackoverflow.com/questions/20510094/how-to-use-a-custom-font-with-dynamic-text-sizes-in-ios7/20510095#20510095
 extension UIFontDescriptor {
     
-    @nonobjc private static var fontSizeTable: [UIFontTextStyle : [UIContentSizeCategory : CGFloat]] = {
+    @nonobjc private static var fontSizeTable: [UIFont.TextStyle : [UIContentSizeCategory : CGFloat]] = {
         return [
             .headline: [
                 .accessibilityExtraExtraExtraLarge: 23,
@@ -94,7 +94,7 @@ extension UIFontDescriptor {
             ]
     }()
     
-    open class func calculatePreferredSize(baseSize: CGFloat, textStyle: UIFontTextStyle = .body) -> CGFloat {
+    open class func calculatePreferredSize(baseSize: CGFloat, textStyle: UIFont.TextStyle = .body) -> CGFloat {
         guard let styleData = fontSizeTable[textStyle] else { return 17 }
         let defaultSize = styleData[.large] ?? 17
         let sizeOffset = baseSize - defaultSize
@@ -107,7 +107,7 @@ extension UIFontDescriptor {
         return calculatedSize
     }
     
-    private class func currentPreferredSize(textStyle: UIFontTextStyle = .body) -> CGFloat {
+    private class func currentPreferredSize(textStyle: UIFont.TextStyle = .body) -> CGFloat {
         let contentSize = UIApplication.shared.preferredContentSizeCategory
         guard
             let style = fontSizeTable[textStyle],

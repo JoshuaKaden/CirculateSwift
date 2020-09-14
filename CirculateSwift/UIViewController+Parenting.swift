@@ -11,19 +11,19 @@ import UIKit
 extension UIViewController {
     
     func adoptChildViewController(_ childController: UIViewController, targetView: UIView? = nil) {
-        self.addChildViewController(childController)
+        self.addChild(childController)
         if let _ = targetView {
             targetView?.addSubview(childController.view)
         } else {
             self.view.addSubview(childController.view)
         }
-        childController.didMove(toParentViewController: self)
+        childController.didMove(toParent: self)
     }
     
     func leaveParentViewController() {
-        self.willMove(toParentViewController: nil)
+        self.willMove(toParent: nil)
         self.view.removeFromSuperview()
-        self.removeFromParentViewController()
+        self.removeFromParent()
     }
     
 }

@@ -12,8 +12,8 @@ extension UIButton {
     
     /** Convenience property for the UIControlState.Normal title of this UIButton. */
     var title: String? {
-        get { return self.title(for: UIControlState()) }
-        set { self.setTitle(newValue, for: UIControlState()) }
+        get { return self.title(for: UIControl.State()) }
+        set { self.setTitle(newValue, for: UIControl.State()) }
     }
     
     /** Convenience property for the titleLabel.font of this button. */
@@ -24,8 +24,8 @@ extension UIButton {
     
     /** Convenience property for the UIControlState.Normal color of this button. */
     var titleColor: UIColor? {
-        get { return self.titleColor(for: UIControlState()) }
-        set { self.setTitleColor(newValue, for: UIControlState()) }
+        get { return self.titleColor(for: UIControl.State()) }
+        set { self.setTitleColor(newValue, for: UIControl.State()) }
     }
     
 }

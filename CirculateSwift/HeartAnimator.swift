@@ -25,7 +25,7 @@ final class HeartAnimator {
         let pulse1 = CABasicAnimation(keyPath: "opacity")
         pulse1.fromValue = 0
         pulse1.toValue = 1
-        pulse1.fillMode = kCAFillModeBackwards
+        pulse1.fillMode = CAMediaTimingFillMode.backwards
         
         let pulse2 = CABasicAnimation(keyPath: "opacity")
         pulse2.fromValue = 1
@@ -34,13 +34,13 @@ final class HeartAnimator {
         let group = CAAnimationGroup()
         group.repeatCount = HUGE
         group.duration = duration
-        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        group.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         group.animations = [pulse1, pulse2]
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = view.buildPath().cgPath
         shapeLayer.frame = floorLayer.bounds
-        shapeLayer.fillColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.4).cgColor
+        shapeLayer.fillColor = UIColor.init(easyRed: 1, easyGreen: 1, easyBlue: 1, alpha: 0.4).cgColor
         shapeLayer.strokeColor = UIColor.clear.cgColor
         shapeLayer.opacity = 0
         shapeLayer.add(group, forKey: "pulse")

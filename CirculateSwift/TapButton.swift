@@ -17,7 +17,7 @@ class TapButton: UIButton {
         self.addTarget(self, action: #selector(performTapAction), for: .touchUpInside)
     }
     
-    func performTapAction() {
+    @objc func performTapAction() {
         if let tapAction = self.tapAction {
             tapAction()
         }

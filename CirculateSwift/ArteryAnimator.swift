@@ -35,7 +35,7 @@ final class ArteryAnimator {
         let group = CAAnimationGroup()
         group.repeatCount = HUGE
         group.duration = duration
-        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        group.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         group.animations = [pulse1, pulse2]
         
         let shapeLayer = CAShapeLayer()
@@ -43,7 +43,7 @@ final class ArteryAnimator {
         shapeLayer.strokeColor = color.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 3
-        shapeLayer.lineCap = kCALineCapRound
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
         shapeLayer.add(group, forKey: "pulse \(view.viewModel.artery)")
         
         floorLayer.addSublayer(shapeLayer)

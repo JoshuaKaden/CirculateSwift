@@ -44,6 +44,6 @@ final class SystemViewController: UIViewController {
         titleLabel.sizeToFit()
         titleLabel.x = 4
         titleLabel.y = 4
-        view.bringSubview(toFront: titleLabel)
+        view.bringSubviewToFront(titleLabel)
     }
 }

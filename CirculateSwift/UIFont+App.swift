@@ -14,23 +14,23 @@ enum AppFontWeight {
     func uiFontWeight() -> CGFloat {
         switch self {
         case .black:
-            return UIFontWeightBlack
+            return UIFont.Weight.black.rawValue
         case .bold:
-            return UIFontWeightBold
+            return UIFont.Weight.bold.rawValue
         case .heavy:
-            return UIFontWeightHeavy
+            return UIFont.Weight.heavy.rawValue
         case .light:
-            return UIFontWeightLight
+            return UIFont.Weight.light.rawValue
         case .medium:
-            return UIFontWeightMedium
+            return UIFont.Weight.medium.rawValue
         case .regular:
-            return UIFontWeightRegular
+            return UIFont.Weight.regular.rawValue
         case .semibold:
-            return UIFontWeightSemibold
+            return UIFont.Weight.semibold.rawValue
         case .thin:
-            return UIFontWeightThin
+            return UIFont.Weight.thin.rawValue
         case .ultralight:
-            return UIFontWeightUltraLight
+            return UIFont.Weight.ultraLight.rawValue
         }
     }
 }
@@ -41,13 +41,13 @@ extension UIFont {
         return appFont(size: size, weight: .bold)
     }
     
-    class func appFont(isFixed: Bool = false, size: CGFloat, textStyle: UIFontTextStyle = .body, weight: AppFontWeight) -> UIFont {
-        guard !isFixed else { return systemFont(ofSize: size, weight: weight.uiFontWeight()) }
+    class func appFont(isFixed: Bool = false, size: CGFloat, textStyle: UIFont.TextStyle = .body, weight: AppFontWeight) -> UIFont {
+        guard !isFixed else { return systemFont(ofSize: size, weight: UIFont.Weight(rawValue: weight.uiFontWeight())) }
         return preferredSystemFont(size: size, textStyle: textStyle, weight: weight.uiFontWeight())
     }
     
-    private class func preferredSystemFont(size: CGFloat, textStyle: UIFontTextStyle = .body, weight: CGFloat) -> UIFont {
+    private class func preferredSystemFont(size: CGFloat, textStyle: UIFont.TextStyle = .body, weight: CGFloat) -> UIFont {
         let preferredSize = UIFontDescriptor.calculatePreferredSize(baseSize: size, textStyle: textStyle)
-        return systemFont(ofSize: preferredSize, weight: weight)
+        return systemFont(ofSize: preferredSize, weight: UIFont.Weight(rawValue: weight))
     }
 }
